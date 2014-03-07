@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JQuery_File_Upload_Plugin</id>
+    <version>8.6.3.3</version>
+    <title>JQuery File Upload Plugin</title>
+    <authors>Sebastian Tschan (Plugin)</authors>
+    <owners>Sebastian Tschan (Plugin)</owners>
+    <licenseUrl>http://www.opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/blueimp/jQuery-File-Upload</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>JQuery File Upload Plugin from blueimp (https://github.com/blueimp/jQuery-File-Upload). This package contains the client side scripts and styles in the typical ASP.NET MVC folder structure (Contents and Scripts) and bundles for the different styles. Also included a demo webpage (~/Views/BackloadDemo/) and a demo controller (~/Controllers/BackloadDemoController.cs).
+
+Main purpose of the package is to install it with the Backload server side upload controller (http://nuget.org/packages/Backload/), but it can be installed without it of course. All files required by the JQuery File Upload Plugin are included (Bootstrap, JqueryUI, AngularJS) for the Basic, BasicPlus, BasicPlusUI and AngularJS styles.
+
+JQuery File Upload Plugin (client side): Sebastian Tschan (blueimp). NuGet package author: Steffen Habermehl. Author of the Backload server side controller: Steffen Habermehl</description>
+    <summary>JQuery File Upload Plugin from blueimp (https://github.com/blueimp/jQuery-File-Upload).
+This package contains the client side scripts/tyles in the typical ASP.NET MVC folder structure and bundeling.</summary>
+    <releaseNotes>Note: Because WebGrease does not handle minified files very well, those files are named debug.* instead of min.*</releaseNotes>
+    <copyright>Sebastian Tschan (JQuery File Upload Plugin), Steffen Habermehl (Nuget package, Backload) 2013</copyright>
+    <language />
+    <tags>Fileupload ASP.NET MVC jQuery Backload</tags>
+    <dependencies>
+      <dependency id="Backload" version="1.9.3.0" />
+      <dependency id="WebGrease" version="1.3.0" />
+      <dependency id="WebActivatorEx" version="2.0.2" />
+      <dependency id="Microsoft.AspNet.Web.Optimization" version="1.0.0" />
+    </dependencies>
+  </metadata>
+</package>

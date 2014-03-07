@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "ichigo Cake - Hakkımızda";
+}
+
+<!-- About item: About us -->
+<div class="masonry">
+    <div class="item dark about">
+        <h2>About us</h2>
+        <p class="lead">something about us</p>
+        <p class="margin-bottom-no">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+        <i class="icon-smile sticker"></i>
+    </div>
+
+    <!-- Portfolio item -->
+    <div class="item portfolio">
+        <div class="view-fancybox">
+            <img src="~/Content/photos/thumb2.jpg" alt="Photo" class="margin-bottom-half" />
+
+            <!-- Portfolio item fancybox -->
+            <a href="~/Content/photos/thumb2.jpg" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
+
+            <!-- Portfolio item Link -->
+            <a href="@Url.Action("Index","Home")"><i class="icon-link view-detail-i"></i></a>
+        </div>
+
+        <!-- Portfolio item Description -->
+        <h3>John Doe</h3>
+        <p class="lead">web designer</p>
+        <p class="margin-bottom-no">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit <a href="#">lobortis</a> nisl ut aliquip ex ea commodo consequat.</p>
+        <i class="icon-smile sticker"></i>
+    </div>
+
+    <!-- About item: Our Team -->
+    <div class="item about">
+        <h2>Our Team</h2>
+        <p class="lead">something about us</p>
+
+        <!-- About item: Slider -->
+        <div class="flexslider">
+            <ul class="slides">
+
+                <!-- About item: Slider Single Box -->
+                <li>
+                    <img src="~/Content/photos/profile1.jpg" alt="Photo" class="margin-bottom-half" />
+                    <h3>John Doe</h3>
+                    <p class="lead">web designer</p>
+                    <p>Sed augue lorem, <strong>dignissim eget</strong> bibendum vitae, scelerisque eget justo scelerisque</p>
+                    <div class="social-links"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-google-plus"></i></a></div>
+                </li>
+
+                <!-- About item: Slider Single Box -->
+                <li>
+                    <img src="~/Content/photos/profile2.jpg" alt="Photo" class="margin-bottom-half" />
+                    <h3>John Doe</h3>
+                    <p class="lead">web developer</p>
+                    <p>Sed augue lorem, <strong>dignissim eget</strong> bibendum vitae, scelerisque eget justo scelerisque</p>
+                    <div class="social-links"><a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a><a href="#"><i class="icon-google-plus"></i></a></div>
+                </li>
+            </ul>
+        </div>
+        <i class="icon-smile sticker"></i>
+    </div>
+
+    <!-- About item: Our Skill -->
+    <div class="item about">
+        <h2>Our Skills</h2>
+        <p class="lead">something about us</p>
+        <div class="progress">
+            <div class="bar" style="width: 85%">HTML <span>85%</span></div>
+        </div>
+        <div class="progress">
+            <div class="bar" style="width: 90%">CSS <span>90%</span></div>
+        </div>
+        <div class="progress">
+            <div class="bar" style="width: 75%">jQuery <span>75%</span></div>
+        </div>
+        <div class="progress margin-bottom-no">
+            <div class="bar" style="width: 100%">Design <span>100%</span></div>
+        </div>
+        <i class="icon-smile sticker"></i>
+    </div>
+</div>

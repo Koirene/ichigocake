@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+/* Flexslider CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+.flexslider {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 2;
+}
+.flexslider .slides {
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+.flex-direction-nav {
+	margin: -25px 0 0 0;
+	padding: 0;
+	width: 100%;
+	height: 50px;
+	list-style: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+}
+.flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	height: 48px;
+	background: #FFF;
+	border: 1px solid #F0F0F0;
+	line-height: 48px;
+	color: #CCC;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+}
+.flex-direction-nav li a.flex-prev {
+	margin-left: -20px;
+	width: 49px;
+	border-left: none;
+	float: left;
+}
+.flex-direction-nav li a.flex-next {
+	margin-right: -20px;
+	width: 49px;
+	border-right: none;
+	float: right;
+}
+.flexslider:hover .flex-direction-nav li a:hover {
+	color: #333;
+}

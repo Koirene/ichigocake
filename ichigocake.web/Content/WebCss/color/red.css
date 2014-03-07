@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+/* Color CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+a, .lead, .thumb-list li i {
+	color: #F33;
+}
+.social-links a i:hover, .view-detail-i {
+	background: #F33;
+}
+.btn, .progress .bar {
+	background-color: #F33;
+}
+.accordion-group {
+	border-color: #F33;
+}

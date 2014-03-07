@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+/* Stickers CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+.home .sticker {
+	background: #333;
+}
+.about .sticker {
+	background: #FC0;
+}
+.services .sticker {
+	background: #AD0;
+}
+.portfolio .sticker {
+	background: #0CC;
+}
+.blog .sticker {
+	background: #868;
+}
+.contact .sticker {
+	background: #F33;
+}

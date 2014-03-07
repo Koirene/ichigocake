@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "ichigo Cake - İletişim";
+}
+<div class="masonry">
+    <!-- Contact item -->
+    <div class="item dark contact">
+        <h2>ADRES</h2>
+        <p class="lead">Mutfağımızın Adresi</p>
+
+        <!-- Contact item: Address -->
+        <address>
+            Beşevler Caddesi, Şömine Sitesi Nilüfer-Bursa<br>
+            (532) 238-3637<br>
+            <a href="mailto:#">k.oznuriren@gmail.com</a>
+        </address>
+        <i class="icon-envelope sticker"></i>
+    </div>
+
+    <!-- Contact item -->
+    <div class="item contact">
+        <h2>Mesajınız</h2>
+        <p class="lead">Bize Ulaşın</p>
+
+        <!-- Contact item: Form --> 
+        <div id="response" class="alert-error"></div>
+        <div id="response-true" class="alert-success"></div>
+        <form name="form1" method="post" class="contact-form">
+            <fieldset>
+                <input type="text" name="name" id="name" placeholder="İsminiz" />
+                <input type="text" name="city" id="city" placeholder="Telefon Numaranız" />
+                <input type="text" name="mail" id="mail" placeholder="E-Posta Adresiniz" />
+                <input type="text" name="subject" id="subject" placeholder="Mesajınızın Konusu" />
+                <textarea name="message" id="message" cols="40" rows="10" placeholder="Mesajınız"></textarea>
+                <button type="submit" name="Submit" value="Invia" id="sendmail" class="btn btn-large btn-block pull-right"><i class="icon-envelope"></i></button>
+            </fieldset>
+        </form>
+        <i class="icon-envelope sticker"></i>
+    </div>
+
+    <!-- Contact item -->
+    <div class="item contact">
+        <h2>Buradayız</h2>
+        <p class="lead">İşte biz haritada buradayız.</p>
+
+        <!-- Contact item: Map -->
+        <div id="map-canvas">
+        </div>
+        <i class="icon-envelope sticker"></i>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+        var mapOptions = {
+            center: new google.maps.LatLng(40.211226, 28.962348),
+            zoom: 10,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        //var number = 20; //
+        //var marker = new google.maps.Marker({
+        //    position: mapOptions.center,
+        //    map: map,
+        //    icon: 'https://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=' + number + '|FF776B|000000'
+        //});
+        var markerIcon = '/Content/img/marker.png';
+        var marker = new google.maps.Marker({
+            position: mapOptions.center,
+            map: map,
+            icon: markerIcon
+        });
+        marker.setMap(map);
+        var styles = [
+            {
+                "featureType": "landscape", 
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }, {
+                "featureType": "poi",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }, {
+                "featureType": "road",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }, {
+                "featureType": "transit",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }, {
+                "featureType": "water",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }, {
+                "featureType": "administrative",
+                "stylers": [
+                    {
+                        "saturation": -100
+                    }
+                ]
+            }
+        ];
+        var styledMap = new google.maps.StyledMapType(styles, {
+            name: "map_style"
+        });
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
+    </script>
+}

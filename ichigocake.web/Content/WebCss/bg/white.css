@@ -1,0 +1,9 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* Background CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+body, .flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	background: url('/Content/img/bb11.jpg');
+
+}

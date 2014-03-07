@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+/* Stickers CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+/* Stickers */
+.sticker, .logo {
+	border-radius: 10%;
+}

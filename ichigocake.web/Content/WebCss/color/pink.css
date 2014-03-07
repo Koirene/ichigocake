@@ -1,0 +1,17 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/* Color CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+a, .lead, .thumb-list li i {
+	color: #E08E79;
+}
+.social-links a i:hover, .view-detail-i {
+	background: #E08E79;
+}
+.btn, .progress .bar {
+	background-color: #E08E79;
+}
+.accordion-group {
+	border-color: #E08E79;
+}

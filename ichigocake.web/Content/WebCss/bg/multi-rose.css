@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+/* Background CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+body {
+	background-image: -moz-linear-gradient(50% 0% -90deg, rgb(239,191,255) 0%, rgb(255,239,191) 100%);
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0, rgb(239,191,255)), color-stop(1, rgb(255,239,191)));
+	background-image: -webkit-linear-gradient(-90deg, rgb(239,191,255) 0%, rgb(255,239,191) 100%);
+	background-image: -o-linear-gradient(-90deg, rgb(239,191,255) 0%, rgb(255,239,191) 100%);
+	background-image: -ms-linear-gradient(-90deg, rgb(239,191,255) 0%, rgb(255,239,191) 100%);
+	background-image: linear-gradient(-90deg, rgb(239,191,255) 0%, rgb(255,239,191) 100%);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffefbfff,endColorstr=#ffffefbf,GradientType=0)";
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffefbfff, endColorstr=#ffffefbf, GradientType=0);
+}
+.flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	background: #333;
+}
+.menu-filters ul li a, .menu ul li a {
+	color: #FFF;
+}

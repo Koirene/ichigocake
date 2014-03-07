@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+/* Background CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+body, .flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	background: #FC0;
+}
+.flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	border-color: #FC0;
+	color: #FFF;
+}
+.sidebar i {
+	color: #666;
+}
+.sidebar h4, .sidebar h5 {
+	color: #FFF;
+}
+.menu-filters ul {
+	background: rgba(0,0,0,0.05);
+}
+.menu-filters ul li a {
+	border-top: 1px solid rgba(0,0,0,0.15);
+}
+.menu-filters ul li a, .menu ul li a {
+	color: #FFF;
+}
+.menu-filters ul li a:hover, .menu-filters ul li a.active {
+	color: #333;
+}
+.masonry .item {
+	border: 1px solid #FC0;
+}

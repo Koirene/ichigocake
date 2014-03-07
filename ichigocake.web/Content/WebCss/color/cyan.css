@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+/* Color CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+a, .lead, .thumb-list li i {
+	color: #9CF;
+}
+.social-links a i:hover, .view-detail-i {
+	background: #9CF;
+}
+.btn, .progress .bar {
+	background-color: #9CF;
+}
+.accordion-group {
+	border-color: #9CF;
+}

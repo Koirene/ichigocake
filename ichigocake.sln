@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.web", "ichigocake.web\ichigocake.web.csproj", "{62114983-20F1-4F79-8484-5412050E706F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.web.Tests", "ichigocake.web.Tests\ichigocake.web.Tests.csproj", "{DF48B424-2002-438B-95AD-BCDC4FEEF2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.admin", "ichigocake.admin\ichigocake.admin.csproj", "{3008AF4F-634C-4496-928A-83A7819DC095}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.domain", "ichigocake.domain\ichigocake.domain.csproj", "{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.persistenceEF", "ichigocake.persistenceEF\ichigocake.persistenceEF.csproj", "{59A71BE7-634F-461C-ABD8-38F571A6C7D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ichigocake.common", "ichigocake.common\ichigocake.common.csproj", "{789F12CD-DE45-45A7-A2DE-7CE92D55FE81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62114983-20F1-4F79-8484-5412050E706F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62114983-20F1-4F79-8484-5412050E706F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62114983-20F1-4F79-8484-5412050E706F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62114983-20F1-4F79-8484-5412050E706F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF48B424-2002-438B-95AD-BCDC4FEEF2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF48B424-2002-438B-95AD-BCDC4FEEF2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF48B424-2002-438B-95AD-BCDC4FEEF2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF48B424-2002-438B-95AD-BCDC4FEEF2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3008AF4F-634C-4496-928A-83A7819DC095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3008AF4F-634C-4496-928A-83A7819DC095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3008AF4F-634C-4496-928A-83A7819DC095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3008AF4F-634C-4496-928A-83A7819DC095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A71BE7-634F-461C-ABD8-38F571A6C7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A71BE7-634F-461C-ABD8-38F571A6C7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A71BE7-634F-461C-ABD8-38F571A6C7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A71BE7-634F-461C-ABD8-38F571A6C7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789F12CD-DE45-45A7-A2DE-7CE92D55FE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789F12CD-DE45-45A7-A2DE-7CE92D55FE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789F12CD-DE45-45A7-A2DE-7CE92D55FE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789F12CD-DE45-45A7-A2DE-7CE92D55FE81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

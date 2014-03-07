@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/WebCss")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Left Column: Sidebar -->
+            <div class="span3 sidebar">
+                <!-- Logo -->
+                <p class="logo"><a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/img/logomain.png")" alt="Logo"></a><span>Butik Pasta & Kurabiye</span></p>
+
+                <!-- NavBar -->
+                <h4><i class="icon-reorder"></i>Menü</h4>
+                <div class="menu">
+                    <ul>
+                        <li>@Html.ActionLink("Anasayfa", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
+                        <li>@Html.ActionLink("Pastalarımız", "Index", "Cake")</li>
+                        <li>@Html.ActionLink("Referanslarımız", "Index", "Reference")</li>
+                        <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                    </ul>
+                </div>
+                @*<div class="menu-simple">
+                    <ul>
+                        
+                    </ul>
+                </div>*@
+
+                <!-- Social Sidebar -->
+                <h4><i class="icon-globe"></i>Sosyal Medya</h4>
+                <div class="social-links">
+                    <a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a>
+                    <a href="#"><i class="icon-google-plus"></i></a><a href="#"><i class="icon-instagram"></i></a>
+                    <a href="#"><i class="icon-pinterest"></i></a>
+                </div>
+
+                <!-- Copy -->
+                <p class="copy">&copy; 2014 Ichigo Cake</p>
+            </div>
+
+            <!-- Right Column: Contents -->
+            <div class="span9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!-- toTop -->
+    <div id="toTop"><i class="icon-angle-up"></i></div>
+
+
+    @Scripts.Render("~/bundles/WebScripts")
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn8mDgYb8eUs1Lj8ElRqiWvTL7KAaA8yY&sensor=false"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

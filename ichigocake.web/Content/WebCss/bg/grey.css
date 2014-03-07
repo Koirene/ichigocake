@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+/* Background CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+body, .flex-direction-nav li a.flex-prev, .flex-direction-nav li a.flex-next {
+	background: #999;
+}
+.menu-filters ul {
+	background: rgba(0,0,0,0.15);
+}
+.menu-filters ul li a {
+	border-top: 1px solid rgba(0,0,0,0.05);
+}
+.menu-filters ul li a:hover, .menu-filters ul li a.active {
+	color: #FFF;
+}
+.masonry .item {
+	border: 1px solid #CCC;
+}

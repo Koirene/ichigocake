@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+/* Transitions CSS v1.0 by Angelo Mazzilli */
+/* http://themeforest.net/user/AngeloM */
+
+a, .btn, .navbar .nav > li > a, .flex-direction-nav li a, .social-links a i, .view-fancybox-i, .view-detail-i {
+	transition: all linear 0.25s;
+	-ms-transition: all linear 0.25s;
+	-moz-transition: all linear 0.25s;
+	-webkit-transition: all linear 0.25s;
+	-o-transition: all linear 0.25s;
+}
