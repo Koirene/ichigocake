@@ -1,9 +1,12 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 /* Stickers CSS v1.0 by Angelo Mazzilli */
 /* http://themeforest.net/user/AngeloM */
 
 /* Stickers */
 .sticker, .logo {
-	border-radius: 100%;
+    border-radius: 100%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #333;
 }
