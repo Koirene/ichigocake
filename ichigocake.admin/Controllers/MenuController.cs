@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace ichigocake.admin.Controllers
 {
-    public class HomeController : Controller
+    public class MenuController : Controller
     {
-        public ActionResult Index()
+        //
+        // GET: /Menu/
+        public ActionResult SideBar()
         {
-            return View();
+            return PartialView("_MenuPartial");
         }
-
-        
-    }
+	}
 }

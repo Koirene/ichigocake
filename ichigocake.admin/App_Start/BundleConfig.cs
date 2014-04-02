@@ -13,6 +13,8 @@ namespace ichigocake.admin
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -45,8 +47,10 @@ namespace ichigocake.admin
 
 
             bundles.Add(new ScriptBundle("~/bundles/AdminScripts").Include(
-                      "~/Scripts/AdminScripts/jquery.js",
-                      "~/Scripts/AdminScripts/jquery-ui.min.js",
+                      "~/Scripts/jquery-{version}.js",
+                      "~/Scripts/jquery-ui-{version}.js",
+                      "~/Scripts/jquery.unobtrusive*",
+                      "~/Scripts/jquery.validate*",
                       "~/Scripts/AdminScripts/bootstrap.js",
                       "~/Scripts/AdminScripts/uniform/jquery.uniform.js",
                       "~/Scripts/AdminScripts/peity/jquery.peity.js",

@@ -15,5 +15,6 @@ namespace ichigocake.domain
         public City City { get; set; }
         public District District { get; set; }
         public string Password { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

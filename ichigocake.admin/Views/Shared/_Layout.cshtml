@@ -7,79 +7,14 @@
     @Styles.Render("~/Content/AdminCss")
     @Styles.Render("~/bundles/fileupload/bootstrap/BasicPlusUI/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="shortcut icon" href="~/Content/img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon.ico")" type="image/x-icon" />
 </head>
 <body>
     <!-- section header -->
-    <header class="header light">
-        <!--nav bar helper-->
-        <div class="navbar-helper">
-            <div class="row-fluid">
-                <!--panel site-name-->
-                <div class="span2">
-                    <div class="panel-sitename">
-                        <h2><a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/img/logo.png")" alt="Logo"></a></h2>
-                    </div>
-                </div>
-                <!--/panel name-->
-                <div class="span7">
-                </div>
-                <div class="span3">
-                    <!--panel button ext-->
-                    <div class="panel-ext">
-                        <div class="btn-group">
-                            <!--notification-->
-                            <a class="btn btn-notification btn-small" data-toggle="dropdown" href="#" title="3 notification">3</a>
-                            <ul class="dropdown-menu dropdown-notification">
-                                <li class="dropdown-header grd-white"><a href="#">Yeni Mesajlarım</a></li>
-                                <li class="new">
-                                    <a href="#">
-                                        <div class="notification">Öznur İren Düğün Sipariş</div>
-                                        <div class="media">
-                                            <img class="media-object pull-left" data-src="js/holder.js/64x64" />
-                                            <div class="media-body">
-                                                <h4 class="media-heading">26 Ocak gününe<small class="helper-font-small"> Sipariş</small></h4>
-                                                <p>300 kişilik Kurabiye ve 100 kişilik pasta</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="dropdown-footer"><a href=""></a></li>
-                            </ul><!--notification-->
-                        </div>
-                        <div class="btn-group user-group">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <img class="corner-all" align="middle" src="~/Content/img/user-thumb.jpg" title="John Doe" alt="john doe" /> <!--this for display on PC device-->
-                                <button class="btn btn-small btn-inverse">John Doe</button> <!--this for display on tablet and phone device-->
-                            </a>
-                            <ul class="dropdown-menu dropdown-user" role="menu" aria-labelledby="dLabel">
-                                <li>
-                                    <div class="media">
-                                        <a class="pull-left" href="#">
-                                            <img class="img-circle" src="img/user.jpg" title="profile" alt="profile" />
-                                        </a>
-                                        <div class="media-body description">
-                                            <p><strong>John Doe</strong></p>
-                                            <p class="muted">johndoe@mail.com</p>
-                                            <p class="action"><a class="link" href="#">Activity</a> - <a class="link" href="#">Setting</a></p>
-                                            <a href="bonus-page/resume/index.html" class="btn btn-primary btn-small btn-block">View Profile</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown-footer">
-                                    <div>
-                                        <a class="btn btn-small pull-right" href="login.html">Logout</a>
-                                        <a class="btn btn-small" href="#">Add Account</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!--panel button ext-->
-
-                </div>
-            </div><!--/row-fluid-->
-        </div><!--/nav bar helper-->
-    </header>
+    @*@if (User.Identity.IsAuthenticated)
+        {*@
+    @Html.Action("Sidebar","Menu")
+    @*}*@
     <!-- section content -->
     <section class="section">
         <div class="row-fluid">
@@ -106,6 +41,14 @@
                             </a>
                         </li>
                         <li>
+                            <a href="@Url.Action("Index","Home")" title="Kategori">
+                                <div class="helper-font-24">
+                                    <i class="icofont-th-large"></i>
+                                </div>
+                                <span class="sidebar-text">Kategori</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="@Url.Action("Index","Home")" title="Pasta Ekle">
                                 <div class="helper-font-24">
                                     <i class="icofont-plus-sign"></i>
@@ -114,27 +57,11 @@
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","Home")" title="Takvim">
-                                <div class="helper-font-24">
-                                    <i class="icofont-time"></i>
-                                </div>
-                                <span class="sidebar-text">Takvim</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="@Url.Action("Index","Home")" title="Mesajlar">
                                 <div class="helper-font-24">
                                     <i class="icofont-envelope-alt"></i>
                                 </div>
                                 <span class="sidebar-text">Mesajlar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Home")" title="Üyeler">
-                                <div class="helper-font-24">
-                                    <i class="icofont-user"></i>
-                                </div>
-                                <span class="sidebar-text">Üye Listesi</span>
                             </a>
                         </li>
                         <li>
@@ -161,13 +88,16 @@
         <a rel="to-top" href="#top" style="display: inline;"><i class=" icofont-circle-arrow-up"></i></a>
     </footer>
 
-    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/jqueryui")*@
     @Scripts.Render("~/bundles/AdminScripts")
-    @Scripts.Render("~/bundles/fileupload/bootstrap/BasicPlusUI/js")
-    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/fileupload/jqueryui/BasicPlusUI/js")
 
     <!-- Initialize the jQuery File Upload Plugin -->
     <script src="~/Scripts/FileUpload/backload.demo.js"></script>
+    @RenderSection("scripts", required: false)
+
+
 </body>
 </html>
 

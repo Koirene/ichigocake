@@ -1,0 +1,75 @@
+﻿
+@{
+    //var routeData = RouteTable.Routes.GetRouteData(new HttpContextWrapper(HttpContext.Current));
+    //var currentController = routeData != null ? (string)routeData.Values["controller"].ToString() : "";
+    //var currentAction = routeData != null ? (string)routeData.Values["action"].ToString() : "";
+}
+<header class="header light">
+    <!--nav bar helper-->
+    <div class="navbar-helper">
+        <div class="row-fluid">
+            <!--panel site-name-->
+            <div class="span2">
+                <div class="panel-sitename">
+                    <h2><a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Content/img/logo.png")" alt="Logo"></a></h2>
+                </div>
+            </div>
+            <!--/panel name-->
+            <div class="span7">
+            </div>
+            <div class="span3">
+                <!--panel button ext-->
+                <div class="panel-ext">
+                    <div class="btn-group">
+                        <!--notification-->
+                        <a class="btn btn-notification btn-small" data-toggle="dropdown" href="#" title="3 notification">3</a>
+                        <ul class="dropdown-menu dropdown-notification">
+                            <li class="dropdown-header grd-white"><a href="#">Yeni Mesajlarım</a></li>
+                            <li class="new">
+                                <a href="#">
+                                    <div class="notification">Öznur İren Düğün Sipariş</div>
+                                    <div class="media">
+                                        <img class="media-object pull-left" data-src="js/holder.js/64x64" />
+                                        <div class="media-body">
+                                            <h4 class="media-heading">26 Ocak gününe<small class="helper-font-small"> Sipariş</small></h4>
+                                            <p>300 kişilik Kurabiye ve 100 kişilik pasta</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="dropdown-footer"><a href=""></a></li>
+                        </ul><!--notification-->
+                    </div>
+                    <div class="btn-group user-group">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <img class="corner-all" align="middle" src="~/Content/img/user-thumb.jpg" title="John Doe" alt="john doe" /> <!--this for display on PC device-->
+                            <button class="btn btn-small btn-inverse">John Doe</button> <!--this for display on tablet and phone device-->
+                        </a>
+                        <ul class="dropdown-menu dropdown-user" role="menu" aria-labelledby="dLabel">
+                            <li>
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="img-circle" src="~/Content/img/user.jpg" title="profile" alt="profile" />
+                                    </a>
+                                    <div class="media-body description">
+                                        <p><strong>John Doe</strong></p>
+                                        <p class="muted">johndoe@mail.com</p>
+                                        <p class="action"><a class="link" href="#">Activity</a> - <a class="link" href="#">Setting</a></p>
+                                        <a href="bonus-page/resume/index.html" class="btn btn-primary btn-small btn-block">View Profile</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown-footer">
+                                <div>
+                                    <a class="btn btn-small pull-right" href="login.html">Logout</a>
+                                    <a class="btn btn-small" href="#">Add Account</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--panel button ext-->
+
+            </div>
+        </div><!--/row-fluid-->
+    </div><!--/nav bar helper-->
+</header>

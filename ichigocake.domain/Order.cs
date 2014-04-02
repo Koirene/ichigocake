@@ -11,6 +11,7 @@ namespace ichigocake.domain
     {
         public virtual User User { get; set; }
         public IList<CakeOrder> CakeOrders { get; set; }
+        public virtual Category Category { get; set; }
         public virtual Delivery Delivery { get; set; }
         public string Address { get; set; }
         public double TotalAmount { get; set; }
