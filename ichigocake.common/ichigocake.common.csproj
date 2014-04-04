@@ -101,6 +101,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Repository.cs" />
     <Compile Include="Resources\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,7 +123,6 @@
     <Folder Include="Content\Images\Reference\" />
     <Folder Include="Content\Images\Store\Big\" />
     <Folder Include="Content\Images\Store\Small\" />
-    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -132,6 +133,12 @@
       <Link>AutoMapper.Net4.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ichigocake.domain\ichigocake.domain.csproj">
+      <Project>{EAE543A1-C784-4C1F-82E5-E5E66F342BF9}</Project>
+      <Name>ichigocake.domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
