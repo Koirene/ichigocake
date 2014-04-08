@@ -13,6 +13,7 @@ namespace ichigocake.admin.Controllers
         public ActionResult SideBar()
         {
             return PartialView("_MenuPartial");
+            
         }
 	}
 }
