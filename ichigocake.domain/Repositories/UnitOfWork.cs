@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ichigocake.domain.Repositories.Base;
 
 namespace ichigocake.domain.Repositories
 {
@@ -12,7 +13,7 @@ namespace ichigocake.domain.Repositories
         private DbContext context;
         private Repository<Cake> _cakeRepository;
         private Repository<Category> _categoryRepository;
-        private Repository<Reference> referenceRepository;
+        private Repository<Reference> _referenceRepository;
 
         public Repository<Cake> CakeRepository
         {

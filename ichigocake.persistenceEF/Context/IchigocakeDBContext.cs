@@ -65,7 +65,7 @@ namespace ichigocake.persistenceEF.Context
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity)
                 .IsRequired();
 
-            
+
             //AUDIT ENTITIES
             modelBuilder.Entity<User>().Property(t => t.TimeStamp).IsRowVersion();
             modelBuilder.Entity<Cake>().Property(t => t.TimeStamp).IsRowVersion();
@@ -73,7 +73,7 @@ namespace ichigocake.persistenceEF.Context
             modelBuilder.Entity<Reference>().Property(t => t.TimeStamp).IsRowVersion();
             modelBuilder.Entity<Message>().Property(t => t.TimeStamp).IsRowVersion();
             modelBuilder.Entity<Image>().Property(t => t.TimeStamp).IsRowVersion();
-           
+
             modelBuilder.Entity<User>()
                 .HasMany<Role>(r => r.Roles)
                 .WithMany(u => u.Users)
@@ -94,35 +94,32 @@ namespace ichigocake.persistenceEF.Context
         {
         }
 
-        //public override int SaveChanges()
-        //{
+        public override int SaveChanges()
+        {
 
-        //    //    var currentWorkContext = new  IMdtWorkContext;
-        //    //    if (currentWorkContext == null)
-        //    //        throw new InvalidOperationException("Please use MDT Context in a Work Context!");
-        //    //    foreach (var item in this.ChangeTracker.Entries())
-        //    //    {
-        //    //        if ((item.State == System.Data.EntityState.Added || item.State == System.Data.EntityState.Modified) && item.Entity is AuditEntity)
-        //    //        {
-        //    //            var auditEntity = item.Entity as AuditEntity;
-        //    //            var curDate = DateTime.Now;
+            foreach (var item in this.ChangeTracker.Entries())
+            {
+                if ((item.State == EntityState.Added || item.State == EntityState.Modified) && item.Entity is AuditEntity)
+                {
+                    var auditEntity = item.Entity as AuditEntity;
+                    var curDate = DateTime.Now;
 
-        //    //            if (item.State == System.Data.EntityState.Added)
-        //    //            {
-        //    //                if (!auditEntity.CreatedBy.HasValue)
-        //    //                    auditEntity.CreatedBy = currentWorkContext.CurrentUserId;
-        //    //                if (!auditEntity.CreatedDate.HasValue)
-        //    //                    auditEntity.CreatedDate = curDate;
-        //    //            }
+                    if (item.State == EntityState.Added)
+                    {
+                        //if (!auditEntity.CreatedBy.HasValue)
+                        //    auditEntity.CreatedBy = currentWorkContext.CurrentUserId;
+                        if (!auditEntity.CreatedDate.HasValue)
+                            auditEntity.CreatedDate = curDate;
+                    }
 
-        //    //            if (!auditEntity.LastModifiedBy.HasValue)
-        //    //                auditEntity.LastModifiedBy = currentWorkContext.CurrentUserId;
-        //    //            if (!auditEntity.LastModifiedDate.HasValue)
-        //    //                auditEntity.LastModifiedDate = curDate;
-        //    //        }
-        //    //    }
+                    //if (!auditEntity.LastModifiedBy.HasValue)
+                    //    auditEntity.LastModifiedBy = currentWorkContext.CurrentUserId;
+                    if (!auditEntity.LastModifiedDate.HasValue)
+                        auditEntity.LastModifiedDate = curDate;
+                }
+            }
 
-        //    return base.SaveChanges();
-        //}
+            return base.SaveChanges();
+        }
     }
 }

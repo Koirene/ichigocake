@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Linq;
 using System.Linq;
 using System.Linq.Expressions;
-using ichigocake.domain.Base;
 
-namespace ichigocake.domain.Repositories
+namespace ichigocake.domain.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : class
     {
