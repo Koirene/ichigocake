@@ -219,6 +219,17 @@
     <Content Include="Content\photos\thumb6.jpg" />
     <Content Include="Content\photos\thumb7.jpg" />
     <Content Include="Content\photos\thumb8.jpg" />
+    <Content Include="Content\SiteContent\About\1465394_506866766079186_846840638_n.jpg" />
+    <Content Include="Content\SiteContent\About\1537675_10202190352713574_1991864106_o.jpg" />
+    <Content Include="Content\SiteContent\About\473357_4102164635128_919497202_o.jpg" />
+    <Content Include="Content\SiteContent\About\ichigo_cake_chef2.jpg" />
+    <Content Include="Content\SiteContent\About\10150708_727553500628360_57497283_n.jpg" />
+    <Content Include="Content\SiteContent\About\ichigo_cake_Chef.JPG" />
+    <Content Include="Content\SiteContent\Home\10006230_724565457593831_1311065989_n.jpg" />
+    <Content Include="Content\SiteContent\Home\1013818_724569017593475_2146728036_n.jpg" />
+    <Content Include="Content\SiteContent\Home\10150708_727553500628360_57497283_n.jpg" />
+    <Content Include="Content\SiteContent\Home\10155729_724567287593648_1283230077_n.jpg" />
+    <Content Include="Content\SiteContent\Home\1798176_724566940927016_1279482373_n.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -396,6 +407,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\SiteContent\Cake\BabyShower\" />
+    <Folder Include="Content\SiteContent\Cake\Birthday\" />
+    <Folder Include="Content\SiteContent\Cake\Cheesecake\" />
+    <Folder Include="Content\SiteContent\Cake\Cookie\" />
+    <Folder Include="Content\SiteContent\Cake\Muffin\" />
+    <Folder Include="Content\SiteContent\Cake\Wedding\" />
+    <Folder Include="Content\SiteContent\Reference\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
