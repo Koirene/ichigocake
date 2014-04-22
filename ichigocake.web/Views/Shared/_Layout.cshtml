@@ -37,10 +37,12 @@
                 <!-- Social Sidebar -->
                 <h4><i class="icon-globe"></i>Sosyal Medya</h4>
                 <div class="social-links">
-                    <a href="#"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a>
+                    <a href="https://www.facebook.com/ichigocaketr?fref=ts"><i class="icon-facebook"></i></a><a href="#"><i class="icon-twitter"></i></a>
                     <a href="#"><i class="icon-google-plus"></i></a><a href="#"><i class="icon-instagram"></i></a>
-                    <a href="#"><i class="icon-pinterest"></i></a>
+                    <a href="http://www.pinterest.com/ichigocaketr/"><i class="icon-pinterest"></i></a>
                 </div>
+                <a data-pin-do="embedUser" href="http://www.pinterest.com/ichigocaketr/">Visit İchigo Cake's profile on Pinterest.</a>
+               
                 <!-- Copy -->
                 <p class="copy">&copy; 2014 Ichigo Cake</p>
             </div>
@@ -58,5 +60,7 @@
     @Scripts.Render("~/bundles/WebScripts")
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn8mDgYb8eUs1Lj8ElRqiWvTL7KAaA8yY&sensor=false"></script>
     @RenderSection("scripts", required: false)
+    <!-- Please call pinit.js only once per page -->
+    <script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
 </body>
 </html>

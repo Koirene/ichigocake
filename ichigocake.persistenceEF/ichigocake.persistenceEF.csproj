@@ -102,6 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\IchigocakeDbContext.cs" />
+    <Compile Include="Migrations\201404211534556_sd.cs" />
+    <Compile Include="Migrations\201404211534556_sd.Designer.cs">
+      <DependentUpon>201404211534556_sd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +128,11 @@
       <Link>AutoMapper.Net4.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201404211534556_sd.resx">
+      <DependentUpon>201404211534556_sd.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
