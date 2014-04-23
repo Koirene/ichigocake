@@ -11,6 +11,7 @@
 body {
 	font: italic 14px/20px Georgia, Times New Roman, Times, serif;
 	color: #999;
+    font-size:medium;
 }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
@@ -26,7 +27,7 @@ h1, h2, h3 {
 }
 h4 i, h5 i {
 	margin-right: 10px;
-	color: #CCC;
+	color: #999;
 }
 .lead {
 	font-size: 18px;
@@ -47,7 +48,7 @@ img {
 	filter: none;
 	-ms-filter: none;
 	-moz-filter: none;
-	-webkit-filter: saturate(0%);
+	-webkit-filter: none;
 	-o-filter: none;
 }
 hr {
@@ -149,7 +150,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .menu-filters ul li a, .menu-simple ul li a, .menu ul li a {
 	padding: 4px 0 5px 0;
 	border-top: 1px solid rgba(0,0,0,0.025);
-	color: #CCC;
+	color: #999;
 	display: block;
 }
 .menu-filters ul li:first-child a, .menu-simple ul li:first-child a, .menu ul li:first-child a {
@@ -158,6 +159,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 }
 .menu-filters ul li a:hover, .menu-filters ul li a.active, .menu-simple ul li a:hover, .menu-simple ul li a.active, .menu ul li a:hover, .menu ul li a.active {
 	color: #333;
+    font-size:large;
 }
 /* Copy */
 .copy {
