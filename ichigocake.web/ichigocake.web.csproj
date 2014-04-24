@@ -222,6 +222,18 @@
     <Content Include="Content\SiteContent\About\ichigo_cake_chef2.jpg" />
     <Content Include="Content\SiteContent\About\10150708_727553500628360_57497283_n.jpg" />
     <Content Include="Content\SiteContent\About\ichigo_cake_Chef.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\araba.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\bahce.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\balon.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\beyaz.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\bulut.jpg" />
+    <Content Include="Content\SiteContent\Cake\Birthday\cicek.jpg" />
+    <Content Include="Content\SiteContent\Cake\Birthday\cikolatacilek.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\cilek.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\kelebek.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\melek.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\melekbebek.JPG" />
+    <Content Include="Content\SiteContent\Cake\Birthday\piano.jpg" />
     <Content Include="Content\SiteContent\Home\10006230_724565457593831_1311065989_n.jpg" />
     <Content Include="Content\SiteContent\Home\1013818_724569017593475_2146728036_n.jpg" />
     <Content Include="Content\SiteContent\Home\10150708_727553500628360_57497283_n.jpg" />
@@ -390,15 +402,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Cake\Index.cshtml" />
     <Content Include="Views\Reference\Index.cshtml" />
-    <Content Include="Views\Reference\Detail.cshtml" />
-    <Content Include="Views\Cake\List.cshtml" />
-    <Content Include="Views\Cake\Detail.cshtml" />
     <Content Include="Views\Cake\SendOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\SiteContent\Cake\BabyShower\" />
-    <Folder Include="Content\SiteContent\Cake\Birthday\" />
     <Folder Include="Content\SiteContent\Cake\Cheesecake\" />
     <Folder Include="Content\SiteContent\Cake\Cookie\" />
     <Folder Include="Content\SiteContent\Cake\Muffin\" />

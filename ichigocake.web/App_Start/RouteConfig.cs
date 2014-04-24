@@ -12,12 +12,34 @@ namespace ichigocake.web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            
+            routes.MapRoute(
+              name: "Hakkimizda",
+              url: "Hakkimizda",
+              defaults: new { controller = "Home", action = "About", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+                name: "Pastalarimiz",
+                url: "Pastalarimiz",
+                defaults: new { controller = "Cake", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+               name: "Referanslarimiz",
+               url: "Referanslarimiz",
+               defaults: new { controller = "Reference", action = "Index", id = UrlParameter.Optional }
+           );
 
+            routes.MapRoute(
+               name: "Iletisim",
+               url: "iletisim",
+               defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
+           );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+           
         }
     }
 }
