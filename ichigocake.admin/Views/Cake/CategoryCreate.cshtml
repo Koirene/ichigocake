@@ -1,0 +1,111 @@
+﻿@using ichigocake.common.Resources
+@model ichigocake.admin.Models.CakeModel
+@{
+    ViewBag.Title = "Pasta Ekle";
+}
+<div class="content-header">
+    <h2><i class="icofont-home"></i> Pasta Ekle <small> ichigo cake yeni pasta ekle</small></h2>
+</div><!-- /content-header -->
+<!-- content-body -->
+<div class="content-body">
+    <div id="validation" class="row-fluid">
+        <!--span-->
+        <div class="span12">
+            <!--box-->
+            <div class="box corner-all">
+                <!--box header-->
+                <div class="box-header grd-white color-silver-dark corner-top">
+                    <div class="header-control">
+                        <a data-box="collapse"><i class="icofont-caret-up"></i></a>
+                    </div>
+                    <span>Pasta Ekle</span>
+                </div><!--/box header-->
+                <div class="row" id="SuccessAlert" style="display: none;">
+                    <div class="alert alert-success alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        Firma Başarıyla Kaydedilmiştir.
+                    </div>
+                </div>
+                <div class="row" id="ErrorAlert" style="display: none;">
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        Bir Hata Oluştu. Arkaplan resmi eklediniz mi?
+                    </div>
+                </div>
+                <!--box body-->
+                <div class="box-body" id="CreateNewCompanyForm">
+                    <!--validation-->
+                    @using (Html.BeginForm("Create", "Cake", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+
+                        <fieldset>
+                            <legend>Yeni Pasta Ekle</legend>
+                            <div class="control-group">
+                                @Html.LabelFor(t => t.Name, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(t => t.Name, new { @class = "grd-white" })
+                                    @Html.ValidationMessageFor(t => t.Name, "")
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                @Html.LabelFor(t => t.Description, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(t => t.Description, new { @class = "grd-white" })
+                                    @Html.ValidationMessageFor(t => t.Description, "")
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                @Html.LabelFor(t => t.Category, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(t => t.Category, new { @class = "grd-white" })
+                                    @Html.ValidationMessageFor(t => t.Category, "")
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                @Html.LabelFor(t => t.PiePrice, new { @class = "control-label" })
+                                <div class="controls">
+                                    @Html.TextBoxFor(t => t.PiePrice, new { @class = "grd-white" })
+                                    @Html.ValidationMessageFor(t => t.PiePrice, "")
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                @Html.LabelFor(t => t.IsDecorative, new { @class = "control-label" })
+                                <div class="controls">
+                                    <label class="radio">
+                                        <div class="">
+                                            <span>
+                                                @Html.RadioButtonFor(m => m.IsDecorative, true)
+                                            </span>
+                                        </div>
+                                        Dekoratif
+                                    </label>
+                                    <br />
+                                    <label class="radio">
+                                        <div class="">
+                                            <span>
+                                                @Html.RadioButtonFor(m => m.IsDecorative, false)
+                                            </span>
+                                        </div>
+                                        Dekoratif Değil
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                Select a file <input type="file" name="file" />
+                                <input type="submit" value="Upload" />
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </fieldset>
+                    }
+                </div><!--/box body-->
+            </div><!--/box-->
+        </div><!--/span-->
+    </div>
+</div>
+

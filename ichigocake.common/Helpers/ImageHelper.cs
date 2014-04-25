@@ -10,7 +10,7 @@ namespace ichigocake.common.Helpers
         public static void SaveImage(Stream streamImage, string imageFullPath, double maxWidth, double maxHeight, bool createThumbnail)
         {
             var _bitmap = createThumbnail ? CreateThumbnailImage(streamImage, maxWidth, maxHeight) : ResizeImage(streamImage, maxWidth, maxHeight);
-            var thumb = _bitmap.GetThumbnailImage(300, 300, null, IntPtr.Zero);
+            var thumb = _bitmap.GetThumbnailImage(460, 460, null, IntPtr.Zero);
 
             if (createThumbnail)
                 thumb.Save(imageFullPath);

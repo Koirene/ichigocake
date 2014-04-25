@@ -43,7 +43,8 @@ namespace ichigocake.admin
                       "~/Content/AdminCss/select2.css",
                       "~/Content/AdminCss/bootstrap-wysihtml5.css",
                       "~/Content/alertify/alertify.core.css",
-                      "~/Content/alertify/alertify.default.css"));
+                      "~/Content/alertify/alertify.default.css",
+                      "~/Content/AdminCss/fileuploader.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/AdminScripts").Include(
@@ -66,7 +67,8 @@ namespace ichigocake.admin
                       "~/Scripts/AdminScripts/wysihtml5/bootstrap-wysihtml5.js",
                       "~/Scripts/AdminScripts/stilearn-base.js",
                       "~/Scripts/alertify/alertify.min.js",
-                      "~/Scripts/ichigo_admin.js"));
+                      "~/Scripts/AdminScripts/fileuploader.js",
+                      "~/Scripts/AdminScripts/ichigocake_Admin.js"));
         }
     }
 }

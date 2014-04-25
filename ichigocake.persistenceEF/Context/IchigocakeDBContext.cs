@@ -13,10 +13,12 @@ using ichigocake.domain.Lookup;
 
 namespace ichigocake.persistenceEF.Context
 {
-    internal class IchigocakeDbContext : DbContext
+    public class IchigocakeDbContext : DbContext
     {
+       
         public IDbSet<User> Users { get; set; }
         public IDbSet<Cake> Cakes { get; set; }
+        public IDbSet<Category> Categories { get; set; }
         public IDbSet<Order> Orders { get; set; }
         public IDbSet<Reference> References { get; set; }
         public IDbSet<Message> Messages { get; set; }
@@ -85,12 +87,8 @@ namespace ichigocake.persistenceEF.Context
                      });
         }
 
-        public IchigocakeDbContext(string nameOrConnectionString)
-            : base(nameOrConnectionString)
-        {
-        }
-
         public IchigocakeDbContext()
+            : base("name=ichigocakeDbConnection")
         {
         }
 

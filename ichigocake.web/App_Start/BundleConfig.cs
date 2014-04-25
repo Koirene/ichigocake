@@ -39,7 +39,8 @@ namespace ichigocake.web
                       "~/Content/WebCss/stickers/round-stickers.css",
                       "~/Content/WebCss/stickers/dark-stickers.css",
                       "~/Content/WebCss/color/pink.css",
-                      "~/Content/WebCss/bg/white.css"));
+                      "~/Content/WebCss/bg/white.css",
+                      "~/Content/PagedList.css"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/WebScripts").Include(

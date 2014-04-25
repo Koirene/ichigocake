@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/AdminCss")
-    @Styles.Render("~/bundles/fileupload/bootstrap/BasicPlusUI/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon.ico")" type="image/x-icon" />
 </head>
 <body>
     <!-- section header -->
     @*@if (User.Identity.IsAuthenticated)
-        {*@
+    {*@
     @Html.Action("Sidebar","Menu")
     @*}*@
     <!-- section content -->
@@ -49,7 +48,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="@Url.Action("Index","Home")" title="Pasta Ekle">
+                            <a href="@Url.Action("Create","Cake")" title="Pasta Ekle">
                                 <div class="helper-font-24">
                                     <i class="icofont-plus-sign"></i>
                                 </div>
@@ -85,16 +84,17 @@
     </section>
 
     <footer>
-        <a rel="to-top" href="#top" style="display: inline;"><i class=" icofont-circle-arrow-up"></i></a>
+        
     </footer>
 
-    @*@Scripts.Render("~/bundles/jquery")*@
-    @*@Scripts.Render("~/bundles/jqueryui")*@
+   @*@Scripts.Render("~/bundles/jquery")
+   @Scripts.Render("~/bundles/jqueryui")*@
     @Scripts.Render("~/bundles/AdminScripts")
-    @Scripts.Render("~/bundles/fileupload/jqueryui/BasicPlusUI/js")
+    <script type="text/javascript">
+        var relativePath = '@Url.Content("~/")';
+    </script>
 
     <!-- Initialize the jQuery File Upload Plugin -->
-    <script src="~/Scripts/FileUpload/backload.demo.js"></script>
     @RenderSection("scripts", required: false)
 
 

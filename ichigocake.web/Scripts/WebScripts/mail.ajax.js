@@ -43,7 +43,7 @@ $(document).ready(function () {
 function send(datastr) {
   $.ajax({
     type: "POST",
-    url: relativePath + "Home/SendMail",
+    url: relativePath + "Home/SendMail?"+datastr,
     data:datastr,
     contentType: "application/json; charset=utf-8",
     dataType: "json",
@@ -54,3 +54,8 @@ function send(datastr) {
     }
   });
 }
+
+AddAntiForgeryToken = function (data) {
+    data.__RequestVerificationToken = $('.antiForgeryToken_div input[name=__RequestVerificationToken]').val();
+    return data;
+};

@@ -58,6 +58,12 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Repository">
       <HintPath>..\packages\Repository.1.0.6.16\lib\net45\Repository.dll</HintPath>
     </Reference>
@@ -188,6 +194,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CakeViewModel.cs" />
+    <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -206,6 +214,7 @@
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\photos\profile1.jpg" />
     <Content Include="Content\photos\profile2.jpg" />
     <Content Include="Content\photos\thumb1.jpg" />
@@ -222,18 +231,25 @@
     <Content Include="Content\SiteContent\About\ichigo_cake_chef2.jpg" />
     <Content Include="Content\SiteContent\About\10150708_727553500628360_57497283_n.jpg" />
     <Content Include="Content\SiteContent\About\ichigo_cake_Chef.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\araba.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\bahce.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\balon.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\beyaz.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\bulut.jpg" />
-    <Content Include="Content\SiteContent\Cake\Birthday\cicek.jpg" />
-    <Content Include="Content\SiteContent\Cake\Birthday\cikolatacilek.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\cilek.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\kelebek.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\melek.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\melekbebek.JPG" />
-    <Content Include="Content\SiteContent\Cake\Birthday\piano.jpg" />
+    <Content Include="Content\SiteContent\Cake\araba.JPG" />
+    <Content Include="Content\SiteContent\Cake\bahce.JPG" />
+    <Content Include="Content\SiteContent\Cake\balon.JPG" />
+    <Content Include="Content\SiteContent\Cake\beyaz.JPG" />
+    <Content Include="Content\SiteContent\Cake\bulut.jpg" />
+    <Content Include="Content\SiteContent\Cake\cicek.jpg" />
+    <Content Include="Content\SiteContent\Cake\cikolatacilek.JPG" />
+    <Content Include="Content\SiteContent\Cake\cilek.JPG" />
+    <Content Include="Content\SiteContent\Cake\kelebek.JPG" />
+    <Content Include="Content\SiteContent\Cake\melek.JPG" />
+    <Content Include="Content\SiteContent\Cake\melekbebek.JPG" />
+    <Content Include="Content\SiteContent\Cake\piano.jpg" />
+    <Content Include="Content\SiteContent\Category\dugunnisan.jpg" />
+    <Content Include="Content\SiteContent\Category\dogumgunu.jpg" />
+    <Content Include="Content\SiteContent\Category\bebek.jpg" />
+    <Content Include="Content\SiteContent\Category\kurabiye.jpg" />
+    <Content Include="Content\SiteContent\Category\kapkek.jpg" />
+    <Content Include="Content\SiteContent\Category\cheesecake.jpg" />
+    <Content Include="Content\SiteContent\Category\tuzlutatli.jpg" />
     <Content Include="Content\SiteContent\Home\10006230_724565457593831_1311065989_n.jpg" />
     <Content Include="Content\SiteContent\Home\1013818_724569017593475_2146728036_n.jpg" />
     <Content Include="Content\SiteContent\Home\10150708_727553500628360_57497283_n.jpg" />
@@ -355,17 +371,6 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.js" />
     <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
-    <Content Include="Scripts\jQuery.FileUpload\cors\jquery.postmessage-transport.js" />
-    <Content Include="Scripts\jQuery.FileUpload\cors\jquery.xdr-transport.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-audio.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-image.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-jquery-ui.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-process.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-ui.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-validate.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-video.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload.js" />
-    <Content Include="Scripts\jQuery.FileUpload\jquery.iframe-transport.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -403,16 +408,13 @@
     <Content Include="Views\Cake\Index.cshtml" />
     <Content Include="Views\Reference\Index.cshtml" />
     <Content Include="Views\Cake\SendOrder.cshtml" />
+    <Content Include="Views\Cake\Categories.cshtml" />
+    <Content Include="Views\Cake\CakeDetail.cshtml" />
+    <Content Include="Views\Cake\_CakeList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\SiteContent\Cake\BabyShower\" />
-    <Folder Include="Content\SiteContent\Cake\Cheesecake\" />
-    <Folder Include="Content\SiteContent\Cake\Cookie\" />
-    <Folder Include="Content\SiteContent\Cake\Muffin\" />
-    <Folder Include="Content\SiteContent\Cake\Wedding\" />
     <Folder Include="Content\SiteContent\Reference\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -429,6 +431,10 @@
     <ProjectReference Include="..\ichigocake.domain\ichigocake.domain.csproj">
       <Project>{eae543a1-c784-4c1f-82e5-e5e66f342bf9}</Project>
       <Name>ichigocake.domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ichigocake.persistenceEF\ichigocake.persistenceEF.csproj">
+      <Project>{59a71be7-634f-461c-abd8-38f571a6c7d3}</Project>
+      <Name>ichigocake.persistenceEF</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

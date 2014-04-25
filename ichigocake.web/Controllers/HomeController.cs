@@ -34,20 +34,23 @@ namespace ichigocake.web.Controllers
         {
             try
             {
-                SmtpClient smtpClient = new SmtpClient("mail.MyWebsiteDomainName.com", 25);
+                SmtpClient smtpClient = new SmtpClient();
 
-                smtpClient.Credentials = new System.Net.NetworkCredential("info@MyWebsiteDomainName.com", "myIDPassword");
-                smtpClient.UseDefaultCredentials = true;
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Port = 587;
+                smtpClient.Credentials = new System.Net.NetworkCredential("k.oznuriren@gmail.com", "OznStc26");
+                smtpClient.UseDefaultCredentials = false;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.EnableSsl = true;
                 MailMessage mail = new MailMessage();
 
                 //Setting From , To and CC
-                mail.Subject = "";
-                mail.Body = "";
-                mail.From = new MailAddress("info@MyWebsiteDomainName", "MyWeb Site");
-                mail.To.Add(new MailAddress("info@MyWebsiteDomainName"));
-                mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
+                mail.Subject = Request["subject"];
+                mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
+                    " Mesajı: " +  Request["message"]  ;
+                mail.From = new MailAddress("k.oznuriren@gmail.com");
+                mail.To.Add(new MailAddress("k.oznuriren@gmail.com"));
+                //mail.CC.Add(new MailAddress("k.oznuriren@gmail.com"));
 
                 smtpClient.Send(mail);
                 return Json(String.Format("'Success':'true'"));
