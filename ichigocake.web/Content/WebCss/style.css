@@ -343,7 +343,7 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 	z-index: 10;
 }
 .blog-detail {
-	background: #FFF;
+	background: none;
 }
 .blog-detail h1, .blog-detail h2, .blog-detail h3, .blog-detail h4, .blog-detail h5, .blog-detail h6, .blog-detail p, .blog-detail .media-list {
 	padding: 0 20px;

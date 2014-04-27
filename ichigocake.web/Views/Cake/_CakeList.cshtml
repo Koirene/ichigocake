@@ -3,13 +3,12 @@
 @using ichigocake.common.Resources
 @using PagedList.Mvc
 
-<div class="masonry">
+<div class="row span10">
     @if (Model.CakeResults.Any())
     {
         foreach (var cake in Model.CakeResults)
         {
-            <!-- Portfolio item -->
-            <div class="item portfolio">
+            <div class="item portfolio thumbnail span4">
                 <div class="view-fancybox">
                     <img src="@Url.Content("~/Content/SiteContent/Cake/"+cake.CakeImages[0].Url)" alt="@cake.CakeImages[0].Description" class="margin-bottom-half" />
 
@@ -17,23 +16,23 @@
                     <a href="@Url.Content("~/Content/SiteContent/Cake/"+cake.CakeImages[0].Url)" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
 
                     <!-- Portfolio item Link -->
-                    <a href="@Url.Action("Detail","Cake", new{id=cake.Id})"><i class="icon-link view-detail-i"></i></a>
+                    <a href="@Url.Action("CakeDetail","Cake", new{id=cake.Id})"><i class="icon-link view-detail-i"></i></a>
                 </div>
 
                 <!-- Portfolio item Description -->
                 <h3></h3>
                 <p class="lead">@cake.Name</p>
                 <p class="margin-bottom-no"></p>
-                <i class="icon-briefcase sticker"></i>
-              </div>
+            </div>
         }
     }
+
 </div>
 
-<div class="pagedList">
-    @if (Model.CakeResults.Any())
-    {
-        @Html.PagedListPager(Model.CakeResults, pageNumber => Url.Action("CakeList", "Cake", (RouteValueDictionary)Model.GetRouteValues(pageNumber)), new PagedListRenderOptions() { DisplayItemSliceAndTotal = true, ItemSliceAndTotalFormat = "{0} - {1} ({2})" })
-    }
-</div>
+ <div class="pagedList pull-right">
+        @if (Model.CakeResults.Any())
+        {
+            @Html.PagedListPager(Model.CakeResults, pageNumber => Url.Action("CakeList", "Cake", (RouteValueDictionary)Model.GetRouteValues(pageNumber)), new PagedListRenderOptions() { DisplayItemSliceAndTotal = true, ItemSliceAndTotalFormat = "{0} - {1} ({2})" })
+        }
+    </div>
 

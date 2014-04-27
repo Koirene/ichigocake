@@ -1,7 +1,83 @@
-﻿
+﻿@model ichigocake.web.Models.CakeDetailViewModel
 @{
     ViewBag.Title = "CakeDetail";
 }
 
-<h2>CakeDetail</h2>
+<div class="blog-detail">
+    <h2>Pasta Detay SAYFASI</h2>
+    <hr />
+    <!-- Blog item Gallery -->
+    <div class="row span10">
+        <div class="span3">
+            <ul class="thumbnails">
+                @foreach (var img in Model.Cake.CakeImages)
+                {
+                    <li class="span3 view-fancybox">
+                        <img src="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" alt="@img.Description" />
 
+                        <!-- Blog item fancybox -->
+                        <a href="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="span6">
+            <p class="lead">@Model.Cake.Name</p>
+            <p class="date-post">
+                @if (Model.Cake.IsDecorative)
+                { <i>Şeker Hamuru ile Dekoratif Pasta</i> }
+                else
+                { <i>Şeker Hamuru ile Dekor Yapılmamıştır</i> }  <a href="//www.pinterest.com/pin/create/button/?url=@Url.Content("~/Content/SiteContent/Cake/" + Model.Cake.CakeImages[0].Url)&description=@Model.Cake.CakeImages[0].Description" data-pin-do="buttonPin" data-pin-shape="round"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_round_red_16.png" /></a>
+
+            </p>
+            <p class="margin-bottom-half">@Model.Cake.Description</p>
+            <p class="margin-bottom"><a id="sendmail" data-toggle="modal" href="#sendOrderModal" class="btn btn-large btn-block pull-right"><i class="icon-shopping-cart"></i> - SİPARİŞ VER</a></p>
+
+        </div>
+    </div>
+    <hr />
+</div>
+
+<!-- Modal -->
+<div id="sendOrderModal" class="modal hide fade" >
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body" id="sendOrderModalBody">
+        <div class="clearfix">
+            <div class="control-group">
+                <label class="control-label" for="txt_email">Email:</label>
+                <div class="controls">
+                    <input class="input-large" id="txt_email" name="txt_email" type="text" placeholder="Email" maxlength="60" size="30">
+                    <p class="help-block"></p>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="txt_password">Password:</label>
+                <div class="controls">
+                    <input type="password" class="input-large" id="txt_password" name="txt_password" placeholder="Password" maxlength="60" size="30">
+                    <p class="help-block"><a href="/password_forgot.php">Forgot Password</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button type="submit" class="btn btn-primary">Sipariş Gönder</button>
+    </div>
+</div>
+
+@section scripts{
+    
+<script type="text/javascript">
+ 
+    $(document).on("click", "#sendmail", function () {
+        $("#sendOrderModal").modal("show");
+    });
+
+</script>    
+
+}

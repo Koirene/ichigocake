@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "İchigo Cake - Pastalar ve Kategorilerimiz";
 }
-@using (Ajax.BeginForm("CakeList", "Admin", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "cakeList" }, new { id = "CompanyUserFilterForm" }))
+@using (Ajax.BeginForm("CakeList", "Cake", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "cakeList" }, new { id = "CompanyUserFilterForm" }))
 {
 }
+
 <div id="cakeList">
     @Html.Partial("_CakeList", Model)
     <input type="hidden" id="catId" value="@Model.Filter.CatId" />

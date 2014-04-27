@@ -31,4 +31,10 @@ namespace ichigocake.web.Models
         public int? PageSize { get; set; }
         public int? CatId { get; set; }
     }
+    public class CakeDetailViewModel
+    {
+        public Cake Cake { get; set; }
+        public OrderModel OrderModel { get; set; }
+    }
+
 }
