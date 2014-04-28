@@ -36,10 +36,10 @@ namespace ichigocake.web.Controllers
             {
                 SmtpClient smtpClient = new SmtpClient();
 
-                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Host = "mail.ichigocake.com";
                 smtpClient.Port = 587;
-                smtpClient.Credentials = new System.Net.NetworkCredential("k.oznuriren@gmail.com", "OznStc26");
-                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("info@ichigocake.com", "ss4b7858");
+                smtpClient.UseDefaultCredentials = true;
                 smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtpClient.EnableSsl = true;
                 MailMessage mail = new MailMessage();
@@ -49,15 +49,17 @@ namespace ichigocake.web.Controllers
                 mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
                     " Mesajı: " +  Request["message"]  ;
                 mail.From = new MailAddress("k.oznuriren@gmail.com");
-                mail.To.Add(new MailAddress("k.oznuriren@gmail.com"));
+                mail.To.Add(new MailAddress("info@ichigocake.com"));
                 //mail.CC.Add(new MailAddress("k.oznuriren@gmail.com"));
 
                 smtpClient.Send(mail);
-                return Json(String.Format("'Success':'true'"));
+                var message = "Mesajınız başarıyla iletilmiştir.";
+                return Json(String.Format("'Success':'true', 'Başarı':'{0}'",message));
             }
             catch (Exception error)
             {
-                return Json(String.Format("'Success':'false','Error':'{0}'", error));
+                var hatamesaji = "Bir Hata Oluştu. Daha sonra tekrar deneyiniz";
+                return Json(String.Format("'Success':'false','Hata':'{0}'", error));
             }
         }
     }

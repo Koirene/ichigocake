@@ -52,6 +52,7 @@ namespace ichigocake.web
                       "~/Scripts/WebScripts/jquery.nicescroll.min.js",
                       "~/Scripts/WebScripts/mail.ajax.js",
                       "~/Scripts/WebScripts/functions.js",
+                      "~/Scripts/WebScripts/jquery.maskedinput.min.js",
                        "~/Scripts/ichigo_web.js"));
         }
     }

@@ -1,12 +1,12 @@
 ﻿@model ichigocake.web.Models.CakeDetailViewModel
 @{
-    ViewBag.Title = "CakeDetail";
+    ViewBag.Title = "İchigo Cake - Pasta Detay Sayfası";
 }
 
 <div class="blog-detail">
     <h2>Pasta Detay SAYFASI</h2>
     <hr />
-    <!-- Blog item Gallery -->
+ <!-- Blog item Gallery -->
     <div class="row span10">
         <div class="span3">
             <ul class="thumbnails">
@@ -37,47 +37,110 @@
     </div>
     <hr />
 </div>
-
-<!-- Modal -->
-<div id="sendOrderModal" class="modal hide fade" >
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Modal header</h3>
-    </div>
-    <div class="modal-body" id="sendOrderModalBody">
-        <div class="clearfix">
-            <div class="control-group">
-                <label class="control-label" for="txt_email">Email:</label>
-                <div class="controls">
-                    <input class="input-large" id="txt_email" name="txt_email" type="text" placeholder="Email" maxlength="60" size="30">
-                    <p class="help-block"></p>
+@using (Ajax.BeginForm("CakeDetail", "Cake", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "cakeOrderForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <!-- Modal -->
+    <div id="sendOrderModal" class="modal hide fade" style="width: 650px">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <p class="lead">Sipariş Formu</p>
+        </div>
+        <div class="modal-body" id="sendOrderModalBody">
+            <div class="clearfix">
+                <div class="row">
+                    <div class="span2"><img src="@Url.Content("~/Content/SiteContent/Cake/" + Model.Cake.CakeImages[0].Url)" alt="@Model.Cake.CakeImages[0].Description" /></div>
+                    <div class="span4">
+                        <p class="lead">@Model.Cake.Name</p>
+                        <p class="date-post">
+                            Bu kategoriye ait pasta veya kurabiyeler en az <a><b>@Model.Cake.Category.MaxDaytoOrder</b></a> gün önce sipariş verilmelidir. Sipariş teslimat yalnızca Bursa ili içerisindedir.
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div id="cakeOrderForm">
+                    <div id="response" class="alert-error"></div>
+                    <div id="response-true" class="alert-success"></div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.FullName)" id="FullName" placeholder="İsim ve Soyisim" value="@Model.FullName" />
+                            @*@Html.TextBoxFor(t => t.FullName, new { @class = "input-large", @placeholder = "İsim ve Soyisim" })
+                            @Html.ValidationMessageFor(t => t.FullName)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.Email)" id="Email" placeholder="E-Posta Adresi" value="@Model.Email" />
+                            @*@Html.TextBoxFor(t => t.Email, new { @class = "input-large", @placeholder = "E-Posta Adresi" })
+                            @Html.ValidationMessageFor(t => t.Email)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.Phone)" id="Phone" placeholder="Telefon Numarası" value="@Model.Phone" />
+                            @*@Html.TextBoxFor(t => t.Phone, new { @class = "input-large", @placeholder = "Telefon Numarası" })
+                            @Html.ValidationMessageFor(t => t.Phone)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.RequestedDate)" id="RequestedDate" placeholder="Etkinlik Tarihi" />
+                            @*@Html.TextBoxFor(t => t.RequestedDate, new { @class = "input-large", @placeholder = "Etkinlik Tarihi" })
+                            @Html.ValidationMessageFor(t => t.RequestedDate)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.RequestedTime)" id="RequestedTime" placeholder="Etkinlik Saati" />
+                            @*@Html.TextBoxFor(t => t.RequestedTime, new { @class = "input-large", @placeholder = "Etkinlik Saati" })
+                            @Html.ValidationMessageFor(t => t.RequestedTime)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" name="@Html.NameFor(x => x.PersonAmount)" id="PersonAmount" placeholder="Kaç Kişilik?"  />
+                            @*@Html.TextBoxFor(t => t.PersonAmount, new { @class = "input-large", @placeholder = "Kaç Kişilik?" })
+                            @Html.ValidationMessageFor(t => t.PersonAmount)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <textarea rows="3" name="@Html.NameFor(x => x.Address)" id="Address" placeholder="Adres Bilgisi">@Model.Address</textarea>
+                            @*@Html.TextBoxFor(t => t.Address, new { @class = "input-large", @placeholder = "Adres Bilgisi" })
+                            @Html.ValidationMessageFor(t => t.Address)*@
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <textarea name="@Html.NameFor(x => x.Description)" id="Description" placeholder="Sipariş Notu">@Model.FullName</textarea>
+                            @*@Html.TextBoxFor(t => t.Description, new { @class = "input-large", @placeholder = "Sipariş Notu" })
+                            @Html.ValidationMessageFor(t => t.Description)*@
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="control-group">
-                <label class="control-label" for="txt_password">Password:</label>
-                <div class="controls">
-                    <input type="password" class="input-large" id="txt_password" name="txt_password" placeholder="Password" maxlength="60" size="30">
-                    <p class="help-block"><a href="/password_forgot.php">Forgot Password</a></p>
-                </div>
-            </div>
-
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">KAPAT</button>
+            <button type="submit" id="sendOrderBtn" class="btn btn-primary">SİPARİŞ GÖNDER</button>
         </div>
     </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <button type="submit" class="btn btn-primary">Sipariş Gönder</button>
-    </div>
-</div>
-
+}
 @section scripts{
-    
-<script type="text/javascript">
- 
-    $(document).on("click", "#sendmail", function () {
-        $("#sendOrderModal").modal("show");
-    });
 
-</script>    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            jQuery(function ($) {
+                $("#Phone").mask("(0999) 999 99 99");
+                $("#RequestedDate").mask("99/99/9999");
+                $("#RequestedTime").mask("99:99");
+            });
+            
+        });
+        $(document).on("click", "#sendmail", function () {
+            $("#sendOrderModal").modal("show");
+        });
 
+    </script>
 }

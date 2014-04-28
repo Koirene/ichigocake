@@ -12,7 +12,7 @@ namespace ichigocake.domain
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public virtual List<Image> CakeImages { get; set; }
         public bool IsDecorative { get; set; }
         public double PiePrice { get; set; }

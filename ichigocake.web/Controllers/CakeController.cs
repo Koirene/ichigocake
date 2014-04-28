@@ -14,9 +14,10 @@ namespace ichigocake.web.Controllers
         private IchigocakeDbContext db = new IchigocakeDbContext();
         public ActionResult Index(int id)
         {
-            var model = new CakeViewModel();
-            model.Filter=new CakeFilter();
-            model.Filter.CatId = id;
+            var model = new CakeViewModel
+                        {
+                            Filter = new CakeFilter {CatId = id}
+                        };
             var pageIndex = model.Filter.PageNumber ?? 1;
             var pageSize = model.Filter.PageSize ?? 6;
             var cakes = db.Cakes.Where(c => c.Category.Id == id).OrderBy(c=> c.Id).ToPagedList(pageIndex, pageSize);
@@ -40,22 +41,47 @@ namespace ichigocake.web.Controllers
         }
         public ActionResult Categories()
         {
-            var model = new CategoryViewModel();
-            model.Categories = db.Categories.ToList();
+            var model = new CategoryViewModel
+                        {
+                            Categories = db.Categories.ToList()
+                        };
             return View(model);
         }
 
         public ActionResult CakeDetail(int id)
         {
-            var model = new CakeDetailViewModel();
-            model.Cake = db.Cakes.Where(c=> c.Id == id).FirstOrDefault();
+            var model = new CakeDetailViewModel
+                        {
+                            Cake = db.Cakes.FirstOrDefault(c => c.Id == id)
+                        };
             return View(model);
         }
+        
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CakeDetail(CakeDetailViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+
+        //    } 
+        //    return View();
+        //}
 
         public ActionResult SendOrder(int id)
         {
-            
+            if (ModelState.IsValid)
+            {
+                
+            } 
             return View();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            db.Dispose();
+            base.Dispose(disposing);
+        }
+         
     }
 }
