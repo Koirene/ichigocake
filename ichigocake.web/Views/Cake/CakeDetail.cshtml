@@ -13,7 +13,7 @@
                 @foreach (var img in Model.Cake.CakeImages)
                 {
                     <li class="span3 view-fancybox">
-                        <img src="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" alt="@img.Description" />
+                        <img alt="@img.Description" src="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" />
 
                         <!-- Blog item fancybox -->
                         <a href="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
@@ -50,7 +50,7 @@
         <div class="modal-body" id="sendOrderModalBody">
             <div class="clearfix">
                 <div class="row">
-                    <div class="span2"><img src="@Url.Content("~/Content/SiteContent/Cake/" + Model.Cake.CakeImages[0].Url)" alt="@Model.Cake.CakeImages[0].Description" /></div>
+                    <div class="span2"><img alt="@Model.Cake.CakeImages[0].Description" src="@Url.Content("~/Content/SiteContent/Cake/" + Model.Cake.CakeImages[0].Url)" /></div>
                     <div class="span4">
                         <p class="lead">@Model.Cake.Name</p>
                         <p class="date-post">
@@ -135,8 +135,7 @@
                 $("#Phone").mask("(0999) 999 99 99");
                 $("#RequestedDate").mask("99/99/9999");
                 $("#RequestedTime").mask("99:99");
-            });
-            
+            });            
         });
         $(document).on("click", "#sendmail", function () {
             $("#sendOrderModal").modal("show");
