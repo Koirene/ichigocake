@@ -34,30 +34,34 @@ namespace ichigocake.web.Controllers
         {
             try
             {
-                SmtpClient smtpClient = new SmtpClient();
 
-                smtpClient.Host = "smtp.gmail.com";
-                smtpClient.Port = 587;
-                smtpClient.Credentials = new System.Net.NetworkCredential("k.oznuriren@gmail.com", "OznStc26");
-                smtpClient.UseDefaultCredentials = false;
-                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtpClient.EnableSsl = true;
                 MailMessage mail = new MailMessage();
+                
+                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "ss4b7858");
+                SmtpClient MailSend = new SmtpClient("mail.ichigocake.com", 587);
+                MailSend.EnableSsl = false;
+                MailSend.UseDefaultCredentials = true;
+                MailSend.Credentials = userInformation;
+               
 
                 //Setting From , To and CC
                 mail.Subject = Request["subject"];
-                mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
-                    " Mesajı: " +  Request["message"]  ;
-                mail.From = new MailAddress("k.oznuriren@gmail.com");
-                mail.To.Add(new MailAddress("k.oznuriren@gmail.com"));
-                //mail.CC.Add(new MailAddress("k.oznuriren@gmail.com"));
+              
+               mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
+                   " Mesajı: " +  Request["message"]  ;
+                mail.From = new MailAddress("web@ichigocake.com","ICHIGO CAKE");
+                mail.To.Add(new MailAddress("info@ichigocake.com"));
+                mail.Bcc.Add(new MailAddress("k.oznuriren@gmail.com"));
+                MailSend.Send(mail);
 
-                smtpClient.Send(mail);
-                return Json(String.Format("'Success':'true'"));
+                
+                var message = "Mesajınız başarıyla iletilmiştir.";
+                return Json(String.Format("'Success':'true', 'Başarı':'{0}'",message));
             }
             catch (Exception error)
             {
-                return Json(String.Format("'Success':'false','Error':'{0}'", error));
+                var errormessage = "Bir Hata Oluştu. Daha sonra tekrar deneyiniz";
+                return Json(String.Format("'Success':'false','Hata':'{0}'", error));
             }
         }
     }

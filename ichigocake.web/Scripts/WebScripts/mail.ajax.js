@@ -38,6 +38,50 @@ $(document).ready(function () {
     }
     return false;
   });
+
+  $("#sendOrderBtn").click(function () {
+      var valid = '';
+      var isr = '';
+      var name = $("#FullName").val();
+      var phone = $("#Phone").val();
+      var address = $("#Address").val();
+      var email = $("#Email").val();
+      var date = $("#RequestedDate").val();
+      var time = $("#RequestedTime").val();
+      var amount = $("#PersonAmount").val();
+      if (name.length < 1) {
+          valid += '<br />Lütfen isminizi ve soyisminizi girin.' + isr;
+      }
+      if (phone.length < 1) {
+          valid += '<br />Telefon numarası gereklidir.' + isr;
+      }
+      if (!email.match(/^([a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,4}$)/i)) {
+          valid += '<br />Lütfen geçerli E-Posta Adresi Giriniz' + isr;
+      }
+      if (address.length < 1) {
+          valid += '<br />Adres bilgisi gereklidir.' + isr;
+      }
+      if (date.length < 1) {
+          valid += '<br />Etkinlik tarihi gereklidir.' + isr;
+      }
+      if (time.length < 1) {
+          valid += '<br />Etkinlik saati gereklidir.' + isr;
+      }
+      if (amount.length < 1) {
+          valid += '<br />Kişi Sayısı Gereklidir.' + isr;
+      }
+      if (valid != '') {
+          $("#response").fadeToggle("slow");
+          $("#response").html("Hata:" + valid);
+      } else {
+          var datastr = 'name=' + name + '&phone=' + phone + '&email=' + email + '&address=' + address + '&date=' + date + '&time=' + time + '&amount=' + amount;
+          $("#response").css("display", "block");
+          $("#response").html("Mesaj Gönderiliyor... ");
+          $("#response").fadeOut("slow");
+          setTimeout("sendOrder('" + datastr + "')", 2000);
+      }
+      return false;
+  });
 });
 
 function send(datastr) {
@@ -48,13 +92,37 @@ function send(datastr) {
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (html) {
-      $("#response-true").fadeIn("slow");
-      $("#response-true").html(html);
-      setTimeout('$("#response-true").fadeOut("slow")', 2000);
+        if (success) {
+            $("#response-true").fadeIn("slow");
+            $("#response-true").html(html);
+            setTimeout('$("#response-true").fadeOut("slow")', 2000);
+        } else {
+            $("#response").fadeToggle("slow");
+            $("#response").html(html);
+        }
     }
   });
 }
 
+function sendOrder(datastr) {
+    $.ajax({
+        type: "POST",
+        url: relativePath + "Cake/SendOrder?" + datastr,
+        data: datastr,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (html) {
+            if (success) {
+                $("#response-true").fadeIn("slow");
+                $("#response-true").html(html);
+                setTimeout('$("#response-true").fadeOut("slow")', 2000);
+            } else {
+                $("#response").fadeToggle("slow");
+                $("#response").html(html);
+            }
+        }
+    });
+}
 AddAntiForgeryToken = function (data) {
     data.__RequestVerificationToken = $('.antiForgeryToken_div input[name=__RequestVerificationToken]').val();
     return data;

@@ -61,11 +61,83 @@ namespace ichigocake.common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Adres bilgisi gereklidir..
+        /// </summary>
+        public static string AddressRequired {
+            get {
+                return ResourceManager.GetString("AddressRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to E-Posta Adresi gereklidir..
+        /// </summary>
+        public static string EmailRequired {
+            get {
+                return ResourceManager.GetString("EmailRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dosya Yüklenirken Hata Oluştu.
         /// </summary>
         public static string FileUploadError {
             get {
                 return ResourceManager.GetString("FileUploadError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geçersiz e-posta adresi..
+        /// </summary>
+        public static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lütfen isminizi ve soyisminizi girin..
+        /// </summary>
+        public static string NameAndSurnameInvalid {
+            get {
+                return ResourceManager.GetString("NameAndSurnameInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to İsim ve Soyisim alanı gereklidir..
+        /// </summary>
+        public static string NameAndSurnameRequired {
+            get {
+                return ResourceManager.GetString("NameAndSurnameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kişi Sayısı Gereklidir..
+        /// </summary>
+        public static string PersonAmountRequired {
+            get {
+                return ResourceManager.GetString("PersonAmountRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefon numarası gereklidir..
+        /// </summary>
+        public static string PhoneNumberRequired {
+            get {
+                return ResourceManager.GetString("PhoneNumberRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Etkinlik tarihi ve saati gereklidir..
+        /// </summary>
+        public static string RequestedDateTimeRequired {
+            get {
+                return ResourceManager.GetString("RequestedDateTimeRequired", resourceCulture);
             }
         }
     }

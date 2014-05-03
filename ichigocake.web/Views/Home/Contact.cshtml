@@ -6,7 +6,6 @@
     <div class="item dark contact">
         <h2>ADRES</h2>
         <p class="lead">Mutfağımızın Adresi</p>
-
         <!-- Contact item: Address -->
         <address>
             Beşevler Caddesi, Şömine Sitesi Nilüfer-Bursa<br>
@@ -15,13 +14,11 @@
         </address>
         <i class="icon-envelope sticker"></i>
     </div>
-
     <!-- Contact item -->
     <div class="item contact">
         <h2>Mesajınız</h2>
         <p class="lead">Bize Ulaşın</p>
-
-        <!-- Contact item: Form --> 
+        <!-- Contact item: Form -->
         <div id="response" class="alert-error"></div>
         <div id="response-true" class="alert-success"></div>
         <form name="form1" method="post" class="contact-form">
@@ -36,21 +33,17 @@
         </form>
         <i class="icon-envelope sticker"></i>
     </div>
-
     <!-- Contact item -->
     <div class="item contact">
         <h2>Buradayız</h2>
         <p class="lead">İşte biz haritada buradayız.</p>
-
         <!-- Contact item: Map -->
         <div id="map-canvas">
         </div>
         <i class="icon-envelope sticker"></i>
     </div>
 </div>
-
 @section Scripts {
-
     <script type="text/javascript">
         var mapOptions = {
             center: new google.maps.LatLng(40.211226, 28.962348),
@@ -73,7 +66,7 @@
         marker.setMap(map);
         var styles = [
             {
-                "featureType": "landscape", 
+                "featureType": "landscape",
                 "stylers": [
                     {
                         "saturation": -100
@@ -121,5 +114,11 @@
         });
         map.mapTypes.set('map_style', styledMap);
         map.setMapTypeId('map_style');
+
+        $(document).ready(function () {
+            jQuery(function ($) {
+                $("#phone").mask("(0999) 999 99 99");
+            });
+        });
     </script>
 }

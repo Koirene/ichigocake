@@ -117,7 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>Adres bilgisi gereklidir.</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>E-Posta Adresi gereklidir.</value>
+  </data>
   <data name="FileUploadError" xml:space="preserve">
     <value>Dosya Yüklenirken Hata Oluştu</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Geçersiz e-posta adresi.</value>
+  </data>
+  <data name="NameAndSurnameInvalid" xml:space="preserve">
+    <value>Lütfen isminizi ve soyisminizi girin.</value>
+  </data>
+  <data name="NameAndSurnameRequired" xml:space="preserve">
+    <value>İsim ve Soyisim alanı gereklidir.</value>
+  </data>
+  <data name="PersonAmountRequired" xml:space="preserve">
+    <value>Kişi Sayısı Gereklidir.</value>
+  </data>
+  <data name="PhoneNumberRequired" xml:space="preserve">
+    <value>Telefon numarası gereklidir.</value>
+  </data>
+  <data name="RequestedDateTimeRequired" xml:space="preserve">
+    <value>Etkinlik tarihi ve saati gereklidir.</value>
   </data>
 </root>

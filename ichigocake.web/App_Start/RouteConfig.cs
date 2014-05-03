@@ -20,8 +20,13 @@ namespace ichigocake.web
            );
             routes.MapRoute(
                 name: "Pastalarimiz",
-                url: "Pastalarimiz",
+                url: "Pastalarimiz/{id}",
                 defaults: new { controller = "Cake", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+                name: "Kategorilerimiz",
+                url: "Kategorilerimiz",
+                defaults: new { controller = "Cake", action = "Categories", id = UrlParameter.Optional }
             );
             routes.MapRoute(
                name: "Referanslarimiz",
@@ -33,6 +38,11 @@ namespace ichigocake.web
                name: "Iletisim",
                url: "iletisim",
                defaults: new { controller = "Home", action = "Contact", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+               name: "PastaDetay",
+               url: "Pasta/Detay/{id}",
+               defaults: new { controller = "Cake", action = "CakeDetail", id = UrlParameter.Optional }
            );
             routes.MapRoute(
                 name: "Default",

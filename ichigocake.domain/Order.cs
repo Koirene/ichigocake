@@ -9,12 +9,15 @@ namespace ichigocake.domain
 {
     public class Order : AuditEntity
     {
-        public virtual User User { get; set; }
+        //public virtual User User { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
         public IList<CakeOrder> CakeOrders { get; set; }
         public virtual Category Category { get; set; }
         public virtual Delivery Delivery { get; set; }
         public string Address { get; set; }
-        public double TotalAmount { get; set; }
+        public double? TotalAmount { get; set; }
         public DateTime RequestedDateTime { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
