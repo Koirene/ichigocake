@@ -37,7 +37,7 @@ namespace ichigocake.web.Controllers
 
                 MailMessage mail = new MailMessage();
                 
-                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "ss4b7858");
+                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "xxxx");
                 SmtpClient MailSend = new SmtpClient("mail.ichigocake.com", 587);
                 MailSend.EnableSsl = false;
                 MailSend.UseDefaultCredentials = true;
