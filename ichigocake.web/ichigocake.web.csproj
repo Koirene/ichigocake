@@ -342,6 +342,7 @@
     <Content Include="Content\WebCss\fancybox.css" />
     <Content Include="Content\WebCss\flexslider.css" />
     <Content Include="Content\WebCss\font-awesome.min.css" />
+    <Content Include="Content\WebCss\fonts\robotocondensed-light-webfont.svg" />
     <Content Include="Content\WebCss\masonry.css" />
     <Content Include="Content\WebCss\stickers\colored-stickers.css" />
     <Content Include="Content\WebCss\stickers\dark-stickers.css" />
@@ -366,6 +367,9 @@
     <Content Include="Content\font\FontAwesome.otf" />
     <Content Include="Content\img\google-marker.ai" />
     <Content Include="MailTemplates\CustomerOrderReceivedMail.cshtml" />
+    <Content Include="Content\WebCss\fonts\robotocondensed-light-webfont.eot" />
+    <Content Include="Content\WebCss\fonts\robotocondensed-light-webfont.ttf" />
+    <Content Include="Content\WebCss\fonts\robotocondensed-light-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ichigo_web.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
