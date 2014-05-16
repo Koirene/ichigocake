@@ -6,14 +6,14 @@
 <div class="blog-detail">
     <h2>Pasta Detay SAYFASI</h2>
     <hr />
- <!-- Blog item Gallery -->
+    <!-- Blog item Gallery -->
     <div class="row span10">
         <div class="span3">
             <ul class="thumbnails">
                 @foreach (var img in Model.Cake.CakeImages)
                 {
-                    <li class="span3 view-fancybox">
-                        <img alt="@img.Description" src="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" />
+                    <li class="span3 view-fancybox" style="-webkit-box-shadow: 2px 2px 10px 10px #C3969B; -ms-box-shadow: 2px 2px 10px 10px #C3969B; box-shadow: 2px 2px 10px 10px #C3969B; ">
+                        <img alt="@img.Description" src="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)"/>
 
                         <!-- Blog item fancybox -->
                         <a href="@Url.Content("~/Content/SiteContent/Cake/"+img.Url)" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
@@ -66,56 +66,56 @@
                         <div class="controls">
                             <input type="text" name="@Html.NameFor(x => x.FullName)" id="FullName" placeholder="İsim ve Soyisim" value="@Model.FullName" />
                             @*@Html.TextBoxFor(t => t.FullName, new { @class = "input-large", @placeholder = "İsim ve Soyisim" })
-                            @Html.ValidationMessageFor(t => t.FullName)*@
+                                @Html.ValidationMessageFor(t => t.FullName)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <input type="text" name="@Html.NameFor(x => x.Email)" id="Email" placeholder="E-Posta Adresi" value="@Model.Email" />
                             @*@Html.TextBoxFor(t => t.Email, new { @class = "input-large", @placeholder = "E-Posta Adresi" })
-                            @Html.ValidationMessageFor(t => t.Email)*@
+                                @Html.ValidationMessageFor(t => t.Email)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <input type="text" name="@Html.NameFor(x => x.Phone)" id="Phone" placeholder="Telefon Numarası" value="@Model.Phone" />
                             @*@Html.TextBoxFor(t => t.Phone, new { @class = "input-large", @placeholder = "Telefon Numarası" })
-                            @Html.ValidationMessageFor(t => t.Phone)*@
+                                @Html.ValidationMessageFor(t => t.Phone)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <input type="text" name="@Html.NameFor(x => x.RequestedDate)" id="RequestedDate" placeholder="Etkinlik Tarihi" />
                             @*@Html.TextBoxFor(t => t.RequestedDate, new { @class = "input-large", @placeholder = "Etkinlik Tarihi" })
-                            @Html.ValidationMessageFor(t => t.RequestedDate)*@
+                                @Html.ValidationMessageFor(t => t.RequestedDate)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <input type="text" name="@Html.NameFor(x => x.RequestedTime)" id="RequestedTime" placeholder="Etkinlik Saati" />
                             @*@Html.TextBoxFor(t => t.RequestedTime, new { @class = "input-large", @placeholder = "Etkinlik Saati" })
-                            @Html.ValidationMessageFor(t => t.RequestedTime)*@
+                                @Html.ValidationMessageFor(t => t.RequestedTime)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
-                            <input type="text" name="@Html.NameFor(x => x.PersonAmount)" id="PersonAmount" placeholder="Kaç Kişilik?"  />
+                            <input type="text" name="@Html.NameFor(x => x.PersonAmount)" id="PersonAmount" placeholder="Kaç Kişilik?" />
                             @*@Html.TextBoxFor(t => t.PersonAmount, new { @class = "input-large", @placeholder = "Kaç Kişilik?" })
-                            @Html.ValidationMessageFor(t => t.PersonAmount)*@
+                                @Html.ValidationMessageFor(t => t.PersonAmount)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <textarea rows="3" name="@Html.NameFor(x => x.Address)" id="Address" placeholder="Adres Bilgisi">@Model.Address</textarea>
                             @*@Html.TextBoxFor(t => t.Address, new { @class = "input-large", @placeholder = "Adres Bilgisi" })
-                            @Html.ValidationMessageFor(t => t.Address)*@
+                                @Html.ValidationMessageFor(t => t.Address)*@
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls">
                             <textarea name="@Html.NameFor(x => x.Description)" id="Description" placeholder="Sipariş Notu">@Model.FullName</textarea>
                             @*@Html.TextBoxFor(t => t.Description, new { @class = "input-large", @placeholder = "Sipariş Notu" })
-                            @Html.ValidationMessageFor(t => t.Description)*@
+                                @Html.ValidationMessageFor(t => t.Description)*@
                         </div>
                     </div>
                 </div>
@@ -130,12 +130,12 @@
 @section scripts{
 
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             jQuery(function ($) {
                 $("#Phone").mask("(0999) 999 99 99");
                 $("#RequestedDate").mask("99/99/9999");
                 $("#RequestedTime").mask("99:99");
-            });            
+            });
         });
         $(document).on("click", "#sendmail", function () {
             $("#sendOrderModal").modal("show");
