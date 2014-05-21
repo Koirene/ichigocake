@@ -1,94 +1,60 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/AdminCss")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon.ico")" type="image/x-icon" />
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    @*<link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon.ico")" type="image/x-icon" />*@
 </head>
 <body>
     <!-- section header -->
     @*@if (User.Identity.IsAuthenticated)
-    {*@
-    @Html.Action("Sidebar","Menu")
+        {*@
+    @Html.Action("Sidebar", "Menu")
     @*}*@
-    <!-- section content -->
-    <section class="section">
-        <div class="row-fluid">
-            <!-- span side-left -->
-            <div class="span1">
-                <!--side bar-->
-                <aside class="side-left light">
-                    <ul id="menu" class="sidebar">
-                        <li class="active first">
-                            <!--always define class .first for first-child of li element sidebar left-->
-                            <a href="@Url.Action("Index","Home")" title="Anasayfa">
-                                <div class="helper-font-24">
-                                    <i class="icofont-home"></i>
-                                </div>
-                                <span class="sidebar-text">Anasayfa</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Cake")" title="Pastalar">
-                                <div class="helper-font-24">
-                                    <i class="icofont-heart"></i>
-                                </div>
-                                <span class="sidebar-text">Pastalarım</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Home")" title="Kategori">
-                                <div class="helper-font-24">
-                                    <i class="icofont-th-large"></i>
-                                </div>
-                                <span class="sidebar-text">Kategori</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Create","Cake")" title="Pasta Ekle">
-                                <div class="helper-font-24">
-                                    <i class="icofont-plus-sign"></i>
-                                </div>
-                                <span class="sidebar-text">Pasta Ekle</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Home")" title="Mesajlar">
-                                <div class="helper-font-24">
-                                    <i class="icofont-envelope-alt"></i>
-                                </div>
-                                <span class="sidebar-text">Mesajlar</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="@Url.Action("Index","Home")" title="Teslimat">
-                                <div class="helper-font-24">
-                                    <i class="icofont-truck"></i>
-                                </div>
-                                <span class="sidebar-text">Teslimat</span>
-                            </a>
-                        </li>
-                    </ul>
-                </aside><!--/side bar -->
-            </div><!-- span side-left -->
 
-            <div class="span9">
-                <div class="content">
-                    @RenderBody()
-                </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="@Url.Action("Index","Home")">Anasayfa</a></li> 
+                    <li><a href="#">Kategori Ekle</a></li>
+                    <li><a href="#">Pasta Ekle</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="@Url.Action("Index","Cake")">Pastalarım</a></li>
+                    <li><a href="">Kategori Ekle</a></li>
+                    <li><a href="">Pasta Ekle</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">Referanslarım</a></li>
+                    <li><a href="">Referans Ekle</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">Raporlar</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                @RenderBody()
             </div>
         </div>
-    </section>
-
-    <footer>
-        
-    </footer>
-
-   @*@Scripts.Render("~/bundles/jquery")
-   @Scripts.Render("~/bundles/jqueryui")*@
+    </div>
+ 
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")*@
     @Scripts.Render("~/bundles/AdminScripts")
     <script type="text/javascript">
         var relativePath = '@Url.Content("~/")';
@@ -96,7 +62,6 @@
 
     <!-- Initialize the jQuery File Upload Plugin -->
     @RenderSection("scripts", required: false)
-
 
 </body>
 </html>

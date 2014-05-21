@@ -1,6 +1,8 @@
 ﻿@model ichigocake.web.Models.CakeViewModel
 @{
     ViewBag.Title = "İchigo Cake - Pastalar ve Kategorilerimiz";
+    ViewBag.Description = "";
+    ViewBag.Keywords = "";
 }
 @using (Ajax.BeginForm("CakeList", "Cake", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "cakeList" }, new { id = "CompanyUserFilterForm" }))
 {

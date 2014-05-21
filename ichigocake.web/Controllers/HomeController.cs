@@ -6,7 +6,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Net.Mail.SmtpClient;
+ 
 namespace ichigocake.web.Controllers
 {
     public class HomeController : Controller
@@ -37,7 +38,7 @@ namespace ichigocake.web.Controllers
 
                 MailMessage mail = new MailMessage();
                 
-                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "xxxx");
+                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "ss4b7858");
                 SmtpClient MailSend = new SmtpClient("mail.ichigocake.com", 587);
                 MailSend.EnableSsl = false;
                 MailSend.UseDefaultCredentials = true;
@@ -47,16 +48,21 @@ namespace ichigocake.web.Controllers
                 //Setting From , To and CC
                 mail.Subject = Request["subject"];
               
-               mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
+                mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
                    " Mesajı: " +  Request["message"]  ;
                 mail.From = new MailAddress("web@ichigocake.com","ICHIGO CAKE");
                 mail.To.Add(new MailAddress("info@ichigocake.com"));
                 mail.Bcc.Add(new MailAddress("k.oznuriren@gmail.com"));
                 MailSend.Send(mail);
-
-                
+                                                                
                 var message = "Mesajınız başarıyla iletilmiştir.";
-                return Json(String.Format("'Success':'true', 'Başarı':'{0}'",message));
+               
+
+                //new MailController().OrderMail(chef_model).Deliver();
+                //new MailController().CustomerOrderReceivedMail(customer_model).Deliver();
+
+                return Json(String.Format("'Success':'true', 'Başarı':'{0}'", message));
+
             }
             catch (Exception error)
             {

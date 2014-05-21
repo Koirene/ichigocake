@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActionMailer.Net">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ActionMailer.Net.Mvc">
+      <HintPath>..\packages\ActionMailer.0.7.4\lib\Net40\ActionMailer.Net.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Autofac">
       <HintPath>..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
     </Reference>
@@ -63,6 +69,9 @@
     </Reference>
     <Reference Include="PagedList.Mvc">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
     <Reference Include="Repository">
       <HintPath>..\packages\Repository.1.0.6.16\lib\net45\Repository.dll</HintPath>
@@ -190,6 +199,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\CakeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
     <Compile Include="Controllers\ReferenceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -198,6 +208,7 @@
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\MailModels\OrderMailModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\ReferenceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -209,6 +220,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\bb11.jpg" />
+    <Content Include="Content\img\ichigochef.jpg" />
     <Content Include="Content\img\logomain.png" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui-noscript.css" />
@@ -418,6 +430,8 @@
     <Content Include="Views\Cake\Categories.cshtml" />
     <Content Include="Views\Cake\CakeDetail.cshtml" />
     <Content Include="Views\Cake\_CakeList.cshtml" />
+    <Content Include="Views\Mail\CustomerOrderReceivedMail.cshtml" />
+    <Content Include="Views\Mail\OrderMail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
