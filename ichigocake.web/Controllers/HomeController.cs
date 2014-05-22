@@ -6,8 +6,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
-using System.Net.Mail.SmtpClient;
- 
+using ichigocake.web.Models.MailModels;
+
 namespace ichigocake.web.Controllers
 {
     public class HomeController : Controller
@@ -36,29 +36,32 @@ namespace ichigocake.web.Controllers
             try
             {
 
-                MailMessage mail = new MailMessage();
-                
-                System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "ss4b7858");
-                SmtpClient MailSend = new SmtpClient("mail.ichigocake.com", 587);
-                MailSend.EnableSsl = false;
-                MailSend.UseDefaultCredentials = true;
-                MailSend.Credentials = userInformation;
+                //MailMessage mail = new MailMessage();
+
+                //System.Net.NetworkCredential userInformation = new System.Net.NetworkCredential("web@ichigocake.com", "ss4b7858");
+                //SmtpClient MailSend = new SmtpClient("mail.ichigocake.com", 587);
+                //MailSend.EnableSsl = false;
+                //MailSend.UseDefaultCredentials = true;
+                //MailSend.Credentials = userInformation;
                
 
-                //Setting From , To and CC
-                mail.Subject = Request["subject"];
+                ////Setting From , To and CC
+                //mail.Subject = Request["subject"];
               
-                mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
-                   " Mesajı: " +  Request["message"]  ;
-                mail.From = new MailAddress("web@ichigocake.com","ICHIGO CAKE");
-                mail.To.Add(new MailAddress("info@ichigocake.com"));
-                mail.Bcc.Add(new MailAddress("k.oznuriren@gmail.com"));
-                MailSend.Send(mail);
-                                                                
+                //mail.Body = "Kullanıcı İsmi: " + Request["name"] + " Telefon Numarası: " + Request["phone"] + "Kullanıcı Email: " + Request["mail"] +
+                //   " Mesajı: " +  Request["message"]  ;
+                //mail.From = new MailAddress("web@ichigocake.com","ICHIGO CAKE");
+                //mail.To.Add(new MailAddress("info@ichigocake.com"));
+                //mail.Bcc.Add(new MailAddress("k.oznuriren@gmail.com"));
+                //MailSend.Send(mail);
+
+                var chefModel=new ChefOrderMailModel();
+                chefModel.Email = "noreply@ichigocake.com";
+                chefModel.UserName = Request["name"];
+                new MailController().OrderMail(chefModel).Deliver();              
                 var message = "Mesajınız başarıyla iletilmiştir.";
                
-
-                //new MailController().OrderMail(chef_model).Deliver();
+                
                 //new MailController().CustomerOrderReceivedMail(customer_model).Deliver();
 
                 return Json(String.Format("'Success':'true', 'Başarı':'{0}'", message));

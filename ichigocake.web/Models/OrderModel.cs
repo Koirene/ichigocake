@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ichigocake.domain;
 
 namespace ichigocake.web.Models
 {
@@ -12,6 +13,7 @@ namespace ichigocake.web.Models
         public string Address { get; set; }
         public double TotalAmount { get; set; }
         public DateTime RequestedDateTime { get; set; }
+        public Cake Cake { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
     }

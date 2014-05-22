@@ -206,7 +206,7 @@
     </Compile>
     <Compile Include="Models\CakeViewModel.cs" />
     <Compile Include="Models\CategoryViewModel.cs" />
-    <Compile Include="Models\MailModels\OrderMailModel.cs" />
+    <Compile Include="Models\MailModels\MailModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ReferenceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -427,11 +427,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Cake\Index.cshtml" />
     <Content Include="Views\Reference\Index.cshtml" />
-    <Content Include="Views\Cake\Categories.cshtml" />
     <Content Include="Views\Cake\CakeDetail.cshtml" />
     <Content Include="Views\Cake\_CakeList.cshtml" />
-    <Content Include="Views\Mail\CustomerOrderReceivedMail.cshtml" />
-    <Content Include="Views\Mail\OrderMail.cshtml" />
+    <Content Include="Views\Mail\OrderMail.html.cshtml" />
+    <Content Include="Views\Shared\_MailLayout.cshtml" />
+    <Content Include="Views\Cake\Categories.cshtml" />
+    <Content Include="Views\Mail\CustomerOrderNotification.html.cshtml" />
+    <Content Include="Views\Mail\MessageMail.html.cshtml" />
+    <Content Include="Views\Mail\CustomerMessageNotification.html.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

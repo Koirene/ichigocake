@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ichigocake.persistenceEF.Context;
 using ichigocake.web.Models;
+using ichigocake.web.Models.MailModels;
 using PagedList;
 
 namespace ichigocake.web.Controllers
@@ -57,24 +58,30 @@ namespace ichigocake.web.Controllers
             return View(model);
         }
         
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult CakeDetail(CakeDetailViewModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-
-        //    } 
-        //    return View();
-        //}
-
-        public ActionResult SendOrder(int id)
+        public ActionResult SendOrder()
         {
-            if (ModelState.IsValid)
+            try
             {
-                
-            } 
-            return View();
+                if (Request["cakeid"] != null)
+                {
+                    var cake = db.Cakes.FirstOrDefault(c => c.Id == Convert.ToInt32(Request["cakeid"]));
+
+                }
+                var chefModel = new ChefOrderMailModel();
+                chefModel.Email = "noreply@ichigocake.com";
+                chefModel.UserName = Request["name"];
+                new MailController().OrderMail(chefModel).Deliver();
+                //new MailController().CustomerOrderReceivedMail(customer_model).Deliver();
+                var message = "Mesajınız başarıyla iletilmiştir.";
+
+                return Json(String.Format("'Success':'true', 'Başarı':'{0}'", message));
+
+            }
+            catch (Exception error)
+            {
+                var errormessage = "Bir Hata Oluştu. Daha sonra tekrar deneyiniz";
+                return Json(String.Format("'Success':'false','Hata':'{0}'", error));
+            }
         }
 
         protected override void Dispose(bool disposing)

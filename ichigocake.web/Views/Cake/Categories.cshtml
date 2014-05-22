@@ -1,0 +1,34 @@
+﻿@model ichigocake.web.Models.CategoryViewModel
+@using ichigocake.domain
+@using ichigocake.common.Resources
+
+@{
+    ViewBag.Title = "İchigo Cake - Pastalarımız ve Kategorilerimiz";
+    ViewBag.Description = "";
+    ViewBag.Keywords = "";
+}
+<div class="masonry">
+    @if (Model.Categories.Any())
+    {
+        foreach (var cat in Model.Categories)
+        {
+            <div class="item portfolio">
+                <div class="view-fancybox">
+                    <img src="@Url.Content("~/Content/SiteContent/Category/"+cat.Image.Url)" alt="@cat.Image.Description" class="margin-bottom-half" />
+
+                    <!-- Portfolio item fancybox -->
+                    <a href="@Url.Content("~/Content/SiteContent/Category/"+cat.Image.Url)" class="fancybox" rel="tag"><i class="icon-picture view-fancybox-i"></i></a>
+
+                    <!-- Portfolio item Link -->
+                    <a href="@Url.Action("Index","Cake", new{id=cat.Id})"><i class="icon-link view-detail-i"></i></a>
+                </div>
+
+                <!-- Portfolio item Description -->
+                <h3></h3>
+                <p class="lead">@cat.Name</p>
+                <p class="margin-bottom-no"></p>
+                <i class="icon-star sticker"></i>
+            </div>
+        }
+    }
+</div>
