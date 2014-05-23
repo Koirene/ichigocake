@@ -1,0 +1,24 @@
+﻿@model ichigocake.web.Models.MailModels.OrderMailModel
+@using ActionMailer.Net
+@using NUnit.Framework.Constraints
+
+@{
+    ViewBag.Title = "CustomerOrderNotification";
+    Layout = "~/Views/Shared/_MailLayout.cshtml";
+}
+
+<layout label="Text only">
+    <table class="w580" width="580" cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr>
+                <td class="w580" width="580">
+                    <p align="left" class="article-title"><singleline label="Title">Sayın @Model.Order.FullName, </singleline></p>
+                    <div align="left" class="article-content">
+                        <multiline label="Description">İchigo Cake Web sitemizden vermiş olduğunuz sipariş bize ulaştı. En kısa zamanda tarafımıza bildirmiş olduğunuz bilgilerle sizinle iletişime geçeceğiz. İlginiz için teşekkür ederiz.</multiline>
+                    </div>
+                </td>
+            </tr>
+            <tr><td class="w580" width="580" height="10"></td></tr>
+        </tbody>
+    </table>
+</layout>

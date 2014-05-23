@@ -12,9 +12,13 @@
         <tbody>
             <tr>
                 <td class="w580" width="580">
-                    <p align="left" class="article-title"><singleline label="Title">@Model.UserName, </singleline></p>
+                    <p align="left" class="article-title"><singleline label="Title">@Model.Subject</singleline></p>
                     <div align="left" class="article-content">
-                        <multiline label="Description"></multiline>
+                        <multiline label="Description">@Model.Message</multiline>
+                        
+                        <multiline label="Description"><p class="article-title">Kullanıcı İsim:</p> @Model.UserName</multiline>
+                        <multiline label="Description"><p class="article-title">Kullanıcı Telefon:</p> @Model.Phone</multiline>
+                        <multiline label="Description"><p class="article-title">Kullanıcı Email:</p> @Model.Email</multiline>
                     </div>
                 </td>
             </tr>

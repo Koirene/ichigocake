@@ -55,15 +55,15 @@ namespace ichigocake.web.Controllers
                 //mail.Bcc.Add(new MailAddress("k.oznuriren@gmail.com"));
                 //MailSend.Send(mail);
 
-                var chefModel=new ChefOrderMailModel();
-                chefModel.Email = "noreply@ichigocake.com";
-                chefModel.UserName = Request["name"];
-                new MailController().OrderMail(chefModel).Deliver();              
+                var mailModel=new MailModel();
+                mailModel.Email = "noreply@ichigocake.com";
+                mailModel.UserName = Request["name"];
+                mailModel.Subject = Request[""];
+                mailModel.Message = Request[""];
+                mailModel.Phone = Request[""];
+                new MailController().MessageMail(mailModel).Deliver();
+                new MailController().CustomerMessageNotificationMail(mailModel).Deliver();
                 var message = "Mesajınız başarıyla iletilmiştir.";
-               
-                
-                //new MailController().CustomerOrderReceivedMail(customer_model).Deliver();
-
                 return Json(String.Format("'Success':'true', 'Başarı':'{0}'", message));
 
             }
