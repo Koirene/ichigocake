@@ -14,8 +14,9 @@ namespace ichigocake.web.Controllers
     {
         public EmailResult OrderMail(OrderMailModel model)
         {
-            To.Add(model.Order.Email);
+            //To.Add(model.Order.Email);
             //To.Add("k.oznuriren@gmail.com");
+            To.Add("noreply@ichigocake.com");
             From = "noreply@ichigocake.com";
             Subject = "Welcome to My Cool Site!";
             return Email("OrderMail", model);
@@ -23,8 +24,9 @@ namespace ichigocake.web.Controllers
 
         public EmailResult MessageMail(MailModel model)
         {
-            To.Add(model.Email);
+            //To.Add(model.Email);
             //To.Add("k.oznuriren@gmail.com");
+            To.Add("noreply@ichigocake.com");
             From = "noreply@ichigocake.com";
             Subject = model.Subject;
             return Email("MessageMail", model);

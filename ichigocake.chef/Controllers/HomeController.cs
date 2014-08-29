@@ -14,14 +14,14 @@ namespace ichigocake.chef.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Orders()
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Messages()
         {
             ViewBag.Message = "Your contact page.";
 

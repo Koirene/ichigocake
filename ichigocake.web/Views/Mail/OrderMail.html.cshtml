@@ -1,0 +1,28 @@
+﻿@model ichigocake.web.Models.MailModels.OrderMailModel
+@using ActionMailer.Net
+@using NUnit.Framework.Constraints
+
+@{
+    Layout = "~/Views/Shared/_MailLayout.cshtml";
+    //Layout = null;
+}
+<layout label="Text only">
+    <table class="w580" width="580" cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+            <tr>
+                <td class="w580" width="580">
+                    <p align="left" class="article-title"><singleline label="Title">@Model.Order.RequestedDateTime Tarihine Siparişiniz Var</singleline></p>
+                    <div align="left" class="article-content">
+                        <multiline label="Description">@Model.Order.FullName, adlı kişiden  @Model.Order.RequestedDateTime tarihine @Model.Order.Cake.Category.Name kategorisindeki @Model.Order.Cake.Name isimli kekiniz için siparişiniz var.</multiline>
+                        <multiline label="Description"><p class="article-title">Sipariş Tanımı:</p> @Model.Order.Description</multiline>
+                        
+                        <multiline label="Description"><p class="article-title">Kullanıcı Adres Bilgisi:</p> @Model.Order.Address</multiline>
+                        <multiline label="Description"><p class="article-title">Kullanıcı Telefon:</p> @Model.Order.Phone</multiline>
+                        <multiline label="Description"><p class="article-title">Kullanıcı Email:</p> @Model.Order.Email</multiline>
+                    </div>
+                </td>
+            </tr>
+            <tr><td class="w580" width="580" height="10"></td></tr>
+        </tbody>
+    </table>
+</layout>

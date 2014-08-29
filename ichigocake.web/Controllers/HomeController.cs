@@ -56,11 +56,11 @@ namespace ichigocake.web.Controllers
                 //MailSend.Send(mail);
 
                 var mailModel=new MailModel();
-                mailModel.Email = "noreply@ichigocake.com";
+                mailModel.Email = Request["email"];
                 mailModel.UserName = Request["name"];
-                mailModel.Subject = Request[""];
-                mailModel.Message = Request[""];
-                mailModel.Phone = Request[""];
+                mailModel.Subject = Request["subject"];
+                mailModel.Message = Request["message"];
+                mailModel.Phone = Request["phone"];
                 new MailController().MessageMail(mailModel).Deliver();
                 new MailController().CustomerMessageNotificationMail(mailModel).Deliver();
                 var message = "Mesajınız başarıyla iletilmiştir.";

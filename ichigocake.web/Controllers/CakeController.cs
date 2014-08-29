@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ichigocake.domain;
 using ichigocake.persistenceEF.Context;
 using ichigocake.web.Models;
 using ichigocake.web.Models.MailModels;
@@ -62,25 +63,31 @@ namespace ichigocake.web.Controllers
         {
             try
             {
+                var orderModel = new OrderMailModel();
                 if (Request["cakeid"] != null)
                 {
-                    var cake = db.Cakes.FirstOrDefault(c => c.Id == Convert.ToInt32(Request["cakeid"]));
-
+                    orderModel.Order.Cake = db.Cakes.FirstOrDefault(c => c.Id == Convert.ToInt32(Request["cakeid"]));
                 }
-                var chefModel = new ChefOrderMailModel();
-                chefModel.Email = "noreply@ichigocake.com";
-                chefModel.UserName = Request["name"];
-                new MailController().OrderMail(chefModel).Deliver();
-                //new MailController().CustomerOrderReceivedMail(customer_model).Deliver();
+                orderModel.Order.Email = Request["Email"];
+                orderModel.Order.FullName = Request["FullName"];
+                orderModel.Order.Address = Request["Address"];
+                orderModel.Order.Description = Request["Description"];
+                orderModel.Order.Phone = Request["Phone"];
+                orderModel.Order.RequestedDate = Request["RequestedDate"];
+                orderModel.Order.RequestedTime = Request["RequestedTime"];
+                orderModel.Order.TotalAmount = Convert.ToInt32(Request["PersonAmount"]);
+
+                new MailController().OrderMail(orderModel).Deliver();
+                new MailController().CustomerOrderNotificationMail(orderModel).Deliver();
                 var message = "Mesajınız başarıyla iletilmiştir.";
 
-                return Json(String.Format("'Success':'true', 'Başarı':'{0}'", message));
+                return Json(String.Format("'Başarı':'{0}'", message));
 
             }
             catch (Exception error)
             {
-                var errormessage = "Bir Hata Oluştu. Daha sonra tekrar deneyiniz";
-                return Json(String.Format("'Success':'false','Hata':'{0}'", error));
+                const string errormessage = "Bir Hata Oluştu. Daha sonra tekrar deneyiniz";
+                return Json(String.Format("'Hata':'{0}'", errormessage));
             }
         }
 

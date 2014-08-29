@@ -13,7 +13,8 @@ namespace ichigocake.web.Models
         public string Address { get; set; }
         public string Phone { get; set; }
         public double TotalAmount { get; set; }
-        public DateTime RequestedDateTime { get; set; }
+        public string RequestedDate { get; set; }
+        public string RequestedTime { get; set; }
         public Cake Cake { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
